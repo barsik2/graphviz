@@ -41,21 +41,11 @@ body{
 .menu_main {
     padding-right: 10px;
     color: #f1f1f1;
-    text-decoration: none;
 }
 
 .menu_main:hover {
     text-decoration: underline;
-}
-
-.menu_api {
-    padding-right: 10px;
-    color: #f1f1f1;
-    text-decoration: none;
-}
-
-.menu_api:hover {
-    text-decoration: underline;
+    color: #6c6c6c;
 }
 
 .menu_settings {
@@ -65,6 +55,7 @@ body{
 
 .menu_settings:hover {
     text-decoration: underline;
+    color: #6c6c6c;
 }
 
 .menu_docs {
@@ -75,6 +66,7 @@ body{
 
 .menu_docs:hover {
     text-decoration: underline;
+    color: #6c6c6c;
 }
 
 /* sidebar */

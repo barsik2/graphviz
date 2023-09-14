@@ -1,5 +1,71 @@
-.font {
-    font-family: Arial, sans-serif;
+body{
+    font-family: 'Montserrat';
+    background-color: #CFCFCF;
+    padding: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
+}
+
+@font-face {
+    font-family: NicoMoji;
+    src: url(../../../font/NicoMoji-Regular.ttf);
+   }
+   h2 {
+    font-family: NicoMoji;
+   }
+
+/* header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #393939;
+}
+
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #f1f1f1;
+}
+
+.menu_main {
+    text-decoration: none;
+    padding-right: 10px;
+    color: #f1f1f1;
+}
+
+.menu_main:hover {
+    text-decoration: underline;
+    color: #6c6c6c;
+}
+
+.menu_settings {
+    color: #f1f1f1;
+}
+
+.menu_settings:hover {
+    text-decoration: underline;
+    color: #6c6c6c;
+}
+
+.menu_docs {
+    padding-right: 10px;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+.menu_docs:hover {
+    text-decoration: underline;
+    color: #6c6c6c;
+}
+
+.content {
+    padding-left: 50px;
+    padding-top: 100px;
 }
 
 .theme-light {
@@ -9,5 +75,5 @@
 
 .theme-dark {
     background-color: #000;
-    color: #fff;    
+    color: #fff;
 }

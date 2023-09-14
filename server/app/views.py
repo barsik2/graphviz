@@ -16,12 +16,6 @@ def api():
 
     return render_template('api.html', user= user)
 
-@app.route('/docs')
-def docs():
-    user = 'Egor'
-
-    return render_template('main.html', user= user)
-
 @app.route('/settings')
 def settings():
     user = 'Egor'
