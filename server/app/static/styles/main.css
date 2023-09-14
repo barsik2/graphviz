@@ -14,6 +14,7 @@ body{
    }
 
 .container {
+    padding-top: 90px;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -21,18 +22,19 @@ body{
 /* header */
 
 .header {
+    position: fixed;
+    width: 100%;
     background-color: #393939;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .container_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     height: 80px;
     margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
     color: #f1f1f1;
 }
 
@@ -221,8 +223,8 @@ body{
     padding: 4px 6px 5px 5px;
     border-radius: 30px;
     border: 1px solid white;
-    background: white; /* Синий цвет фона */
-    color: black; /* Белые буквы */
+    background: white;
+    color: black;
 }
 
 .btn_nav {
