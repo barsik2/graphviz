@@ -66,6 +66,16 @@ body{
 .nav_panel {
     display: flex;
     padding-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.input_class {
+    width: 600px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 1px solid #000;
+    margin-right: 20px;
 }
 
 .search {
@@ -73,5 +83,115 @@ body{
 }
 
 .sort {
-    margin-right: 10px;
+    padding: 5px 36px 6px 35px;
+    border-radius: 25px;
+    border: 1px solid #000;
+    background: #FFF;
+    margin-right: 20px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.log_new {
+    border-radius: 25px;
+    border: 1px solid #000;
+    background: #393939;
+    padding: 20px;
+}
+
+.log_new_header {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 24px;
+    text-align: center;
+}
+
+.log_new_text {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 15px;
+}
+
+.info_new {
+    padding: 20px;
+    border-radius: 25px;
+    background: #FFF;
+}
+
+.other_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 40px;
+    width: 45%;
+}
+
+.other_block_api {
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid #424242;
+    background: #FFF;
+}
+
+.img_api {
+    padding-top: 40%;
+}
+
+.text_api {
+    color: #393939;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.other_block_structure {
+    margin-left: 100px;
+    border-radius: 25px;
+    border: 1px solid #393939;
+    background: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+.other_block_edge {
+    /* grid-column-start: 1; */
+    /* grid-column-end: 2; */
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 1px solid #424242;
+    background: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+.other_block_model {
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 25px;
+    border: 1px solid #424242;
+    background: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+.other_block_metrick {
+    vertical-align: middle;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 1px solid #424242;
+    background: #FFF;
+    text-align: center;
+}
+
+.img_api_metrick {
+    padding-top: 10%;
 }
