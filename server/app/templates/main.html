@@ -77,7 +77,7 @@
                         <button id="btn_add_edge" class="btn_add">Добавить отношение</button>
 
                         <div id="modalEdge" class="modal_edge">
-                            <div class="modal-content-edge">
+                            <form class="modal-content-edge" method=post action="/add_edge" enctype=multipart/form-data>
                               <div class="modal-header-edge">
                                 <span class="close-edge">&times;</span>
                                 <h2>Добавить отношение</h2>
@@ -86,13 +86,13 @@
                                 <p>Укажите индексы вершин, которые хотите соединить </p>
                                 <label class="label_modal">
                                     <span style="display: block;">Первая вершина</span>
-                                    <input class="input_black" type="text" />
+                                    <input class="input_black" type="text" name="firstid" />
                                 </label>
                                 <label class="label_modal">
                                     <span style="display: block;">Вторая вершина</span>
-                                    <input class="input_black" type="text" />
+                                    <input class="input_black" type="text" name="secondid" />
                                 </label>
-                                <select>
+                                <select name=type>
                                     <option>Тип связи</option>
                                     <option>Братья</option>
                                     <option>Друзья</option>
@@ -100,7 +100,7 @@
                                 </select>
                                 <button>Создать</button>
                               </div>
-                            </div>
+                            </form>
                         </div>
                         <script lang="JavaScript">
                             var modal_edge = document.getElementById('modalEdge');
@@ -125,7 +125,7 @@
                         <button id="myBtn" class="btn_add">Добавить вершину</button>
 
                         <div id="myModal" class="modal">
-                            <div class="modal-content">
+                            <form class="modal-content" method=post action="/add_node" enctype=multipart/form-data>
                               <div class="modal-header">
                                 <span class="close">&times;</span>
                                 <h2>Добавить вершину</h2>
@@ -134,19 +134,19 @@
                                 <p>Укажите атрибуты вершины:</p>
                                 <label class="label_modal">
                                     <span style="display: block;">Имя*</span>
-                                    <input class="input_black" type="text" />
+                                    <input class="input_black" type="text" name=firstname/>
                                 </label>
                                 <label class="label_modal">
                                     <span style="display: block;">Фамилия*</span>
-                                    <input class="input_black" type="text" />
+                                    <input class="input_black" type="text"name=surname />
                                 </label>
                                 <label class="label_modal">
                                     <span style="display: block;">Отчество</span>
-                                    <input class="input_black" type="text" />
+                                    <input class="input_black" type="text" name = patro />
                                 </label>
                               </div>
-                              <button>Добавить</button>
-                            </div>
+                              <button type=submit value=Upload>Добавить</button>
+                            </form>
                         </div>
                         <script lang="JavaScript">
                             var modal = document.getElementById('myModal');
@@ -171,7 +171,10 @@
                     </div>
                 </div>
 
-                <textarea name="тип тут сам граф будет" id="" cols="160" rows="20"></textarea>
+                <!-- <textarea name="тип тут сам граф будет" id="" cols="160" rows="20"></textarea> -->
+                <div>
+                    {% include 'nx.html' %}
+                </div>
 
                 <div class="info_graph">
                     <p style="margin-left: 10px;">Тип: Вершина</p>
