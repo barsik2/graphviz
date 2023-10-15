@@ -1,0 +1,51 @@
+body{
+    font-family: 'Montserrat';
+    background-color: white;
+    padding: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
+}
+
+@font-face {
+    font-family: NicoMoji;
+    src: url(../../font/NicoMoji-Regular.ttf);
+   }
+   h1 {
+    font-family: NicoMoji;
+   }
+
+.start_text {
+    margin-top: 100px;
+    color: black;
+    text-align: center;
+}
+
+.start_menu {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 80px;
+}
+
+.start_new_project {
+    padding: 100px 50px 50px 50px;
+    border-radius: 35px;
+    border: 1px solid #000;
+    background: #FFF;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.start_load_project {
+    padding: 100px 50px 50px 50px;
+    border-radius: 35px;
+    border: 1px solid #000;
+    background: #FFF;
+}
+
+.logo {
+    margin-top: 40px;
+    text-align: center;
+}

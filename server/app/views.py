@@ -20,7 +20,29 @@ g.save_graph('server/app/templates/nx.html')
 def hello():
     user = 'Egor'
 
-    return render_template('main.html', user= user)
+    return render_template('start.html', user= user)
+
+@app.route('/main/<name_project>')
+def main():
+     return render_template('main.html')
+
+@app.route('/new_project', methods=['POST', 'GET'])
+def new_project():
+     return render_template('newProject.html')
+
+@app.route('/create_new_project', methods=['POST', 'GET'])
+def create_new_project():
+     name_project = request.form('name_project')
+     return redirect(f'main/{name_project}')
+
+@app.route('/load_project', methods=['GET', 'POST'])
+def load_project():
+     return render_template('loadProject.html')
+
+@app.route('/upload_project', methods=['GET', 'POST'])
+def upload_project():
+     name_project = request.form('name_project')
+     return redirect(f'main/{name_project}')
 
 @app.route('/api')
 def api():

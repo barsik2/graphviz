@@ -1,0 +1,56 @@
+body{
+    font-family: 'Montserrat';
+    background-color: white;
+    padding: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
+}
+
+@font-face {
+    font-family: NicoMoji;
+    src: url(../../font/NicoMoji-Regular.ttf);
+}
+
+h1 {
+    font-family: NicoMoji;
+}
+
+.start_text {
+    margin-top: 250px;
+    color: black;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+.text_input {
+    margin-top: 50px;
+    color: black;
+}
+
+.input {
+    width: 400px;
+    height: 40px;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 35px;
+}
+
+.cont {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn_create {
+    border-radius: 25px;
+    border: 1px solid #000;
+    background: #FFF;
+    padding: 4px 75px 5px 74px;
+    cursor: pointer;
+}
+
+.logo {
+    margin-top: 40px;
+    text-align: center;
+}
