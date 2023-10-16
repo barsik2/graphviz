@@ -5,22 +5,19 @@ from pyvis.network import Network
 from app import app
 from common.pereferences import DEBUG, PORT, HOST, THREADED
 
-g = Network()
-# g.add_nodes([1,2,3], value=[10, 100, 400],
-#                          title=['I am node 1', 'node 2 here', 'and im node 3'],
-#                          x=[21.4, 54.2, 11.2],
-#                          y=[100.2, 23.54, 32.1],
-#                          label=['NODE 1', 'NODE 2', 'NODE 3'],
-#                          color=['#00ff1e', '#162347', '#dd4b39'])
-g.save_graph('server/app/templates/nx.html')
-
 
 @app.route('/index')
 @app.route('/')
 def hello():
     user = 'Egor'
 
-    return render_template('main.html', user= user)
+    return render_template('start_page.html', user= user)
+
+
+@app.route('/main/<name_project>')
+def main_page(name_project):
+    nx_file = f'nx/{name_project}.html'
+    return render_template('main.html', nx_file= nx_file, name_project=name_project)
 
 @app.route('/api')
 def api():
@@ -71,6 +68,18 @@ def add_edge():
 
 
         return redirect(url_for('hello'))
+@app.route('/new_project', methods=['POST', 'GET'])
+def new_project():
+    return render_template('new_project.html')
+
+
+@app.route('/creat_new_project', methods=['POST', 'GET'])
+def creat_new_project():
+    name_progect = request.form['name_progect']
+    g = Network()
+    g.save_graph(f'server/app/templates/nx/{name_progect}.html')
+    
+    return redirect(url_for(f'main_page', name_project = name_progect))
 
 def main():
     app.run(HOST, PORT, debug=DEBUG, threaded=THREADED)

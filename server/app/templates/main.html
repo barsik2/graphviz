@@ -62,7 +62,7 @@
               </div>
 
               <div class="main">
-                <p>Введите название графа</p>
+                <p>{{name_project}}</p>
                 <input class="input_name_graph" placeholder="Имя графа" type="text" />
 
                 <div class="panel_graph">
@@ -173,7 +173,7 @@
 
                 <!-- <textarea name="тип тут сам граф будет" id="" cols="160" rows="20"></textarea> -->
                 <div>
-                    {% include 'nx.html' %}
+                    {% include nx_file %}
                 </div>
 
                 <div class="info_graph">
