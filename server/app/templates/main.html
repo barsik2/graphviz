@@ -39,14 +39,40 @@
                         <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
                         <label for="tab-1" class="tab-label">Импорт данных</label>
                         <div class="tab-content">
-                            <div class="border_file">
-                              <label style="color: white;">Загрузить из файла</label>
-                              <input type="file" />
-                            </div>
+                            <div class="border_file field__wrapper">
+                                <label style="color: white;">Загрузить файл по ссылке</label>
+
+                                <input name="file" type="file" name="file" id="field__file-2" class="field field__file" multiple>
+
+                                <label class="field__file-wrapper" for="field__file-2">
+                                  <div class="field__file-fake">Выберите файл</div>
+                                  <div class="field__file-button">Выбрать</div>
+                                </label>
+
+                             </div>
+                             <script lang="JavaScript">
+                                let fields = document.querySelectorAll('.field__file');
+                                Array.prototype.forEach.call(fields, function (input) {
+                                    let label = input.nextElementSibling,
+                                        labelVal = label.querySelector('.field__file-fake').innerText;
+
+                                    input.addEventListener('change', function (e) {
+                                        let fileName = '';
+                                        if (this.files && this.files.length >= 1)
+                                            fileName = this.files[0].name;
+
+                                        if (fileName)
+                                            label.querySelector('.field__file-fake').innerText = fileName;
+                                        else
+                                            label.querySelector('.field__file-fake').innerText = labelVal;
+                                    });
+                                });
+                            </script>
                             <div class="border_url">
                               <label style="color: white;">Загрузить файл по ссылке</label>
-                              <input class="input" type="url" />
+                              <input style="color: #fff;" class="input" type="url" />
                             </div>
+                            <button class="upload_file">Загрузить</button>
 
                         </div>
                     </div>
@@ -59,7 +85,28 @@
               </div>
               <div class="sidenavTwo">
                 <div class="header_sidenav_harac">
-                    <label class="text_header_sidenav_harac">Отображение характеристик данных</label>
+                    <label class="text_header_sidenav_harac">Отображение характеристик графа</label>
+                </div>
+                <div class="border_url">
+                    <label style="display: block;color: white; padding-left: 10px;">Количество вершин: 842</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Количество ребер: 8742</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Типы связей: Братья</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: 842</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: 842</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Центр: 842</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: 842</label>
+                </div>
+                <div class="border_url">
+                    <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
+                    <select>
+                        <option>
+                            .csv
+                        </option>
+                        <option>
+                            .xlsx
+                        </option>
+                    </select>
+                    <button class="upload_file">Экспортировать</button>
                 </div>
               </div>
 
@@ -174,12 +221,41 @@
                 </div>
 
                 <div>
-                    <iframe src="{{ url_for('static', filename=nx_file) }}" height="100%", width="100%" frameborder="0"></iframe>
+                    <iframe style="border-radius: 70px;" src="{{ url_for('static', filename=nx_file) }}" height="600px", width="100%" frameborder="0"></iframe>
                 </div>
 
 
                 <div class="info_graph">
-                    <p style="margin-left: 10px;">Тип: Вершина</p>
+                    <div class="block_info">
+                        <div class="first_info">
+                            <p class="text_info">Тип: Вершина</p>
+                            <p class="text_info">id: Вершина</p>
+                            <p class="text_info">ФИО: Вершина</p>
+                            <p class="text_info">Телефон: Вершина</p>
+                            <p class="text_info">Никнейм: Вершина</p>
+                        </div>
+
+                        <div class="create-line"></div>
+
+                        <div class="first_info">
+                            <p class="text_info">Тип: Вершина</p>
+                            <p class="text_info">id: Вершина</p>
+                            <p class="text_info">ФИО: Вершина</p>
+                            <p class="text_info">Телефон: Вершина</p>
+                            <p class="text_info">Никнейм: Вершина</p>
+                        </div>
+
+                        <div class="create-line"></div>
+
+                        <div class="first_info">
+                            <p class="text_info">Тип: Вершина</p>
+                            <p class="text_info">id: Вершина</p>
+                            <p class="text_info">ФИО: Вершина</p>
+                            <p class="text_info">Телефон: Вершина</p>
+                            <p class="text_info">Никнейм: Вершина</p>
+                        </div>
+                    </div>
+
                     <div class="btn_nav_all">
                         <button class="btn_nav">Удалить</button>
                         <button class="btn_nav">Дублировать</button>
