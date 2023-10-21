@@ -79,7 +79,22 @@
                     <div class="tab">
                         <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
                         <label for="tab-2" class="tab-label">Генерация</label>
-                        <div class="tab-content">Типа генерации данных</div>
+                        <div class="tab-content">
+                            <div class="generate">
+                                <label style="color: white;">Введите количество вершин</label>
+                                <input style="color: #fff; margin-top: 5px;" class="input" type="text" />
+                                <label style="display: block; color: white; margin-top: 10px;">Выберите способ генерации</label>
+                                <select style="margin-top: 5px;" class="dropdown-menu-export">
+                                    <option value="1">
+                                        Первый способ
+                                    </option>
+                                    <option value="2">
+                                        Какой то другой способ
+                                    </option>
+                                </select>
+                                <button class="upload_file">Сгенерировать</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div>
@@ -96,13 +111,13 @@
                     <label style="display: block;color: white; padding-left: 10px;">Центр: 842</label>
                     <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: 842</label>
                 </div>
-                <div class="border_url">
+                <div class="border_url_export">
                     <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
-                    <select>
-                        <option>
+                    <select class="dropdown-menu-export">
+                        <option value="1">
                             .csv
                         </option>
-                        <option>
+                        <option value="2">
                             .xlsx
                         </option>
                     </select>
@@ -115,11 +130,11 @@
                 <input class="input_name_graph" placeholder="Имя графа" type="text" />
 
                 <div class="panel_graph">
-                    <select>
-                        <option>Поиск метрик</option>
-                        <option>Центральность по степени</option>
-                        <option>Центральность по близости</option>
-                        <option>Смежные группы</option>
+                    <select class="dropdown_metrick">
+                        <option value="">Поиск метрик</option>
+                        <option value="2">Центральность по степени</option>
+                        <option value="3">Центральность по близости</option>
+                        <option value="4">Смежные группы</option>
                     </select>
 
                     <div>
@@ -133,21 +148,23 @@
                               </div>
                               <div class="modal-body-edge">
                                 <p>Укажите индексы вершин, которые хотите соединить </p>
-                                <label class="label_modal">
-                                    <span style="display: block;">Первая вершина</span>
-                                    <input class="input_black" type="text" name="firstid" />
-                                </label>
-                                <label class="label_modal">
-                                    <span style="display: block;">Вторая вершина</span>
-                                    <input class="input_black" type="text" name="secondid" />
-                                </label>
-                                <select name=type>
-                                    <option>Тип связи</option>
-                                    <option>Братья</option>
-                                    <option>Друзья</option>
-                                    <option>Влюбленные</option>
-                                </select>
-                                <button>Создать</button>
+                                <div class="data_edge">
+                                    <label class="label_modal">
+                                        <span style="display: block; font-size: 15px;">Первая вершина</span>
+                                        <input class="input_black" type="text" name="firstid" />
+                                    </label>
+                                    <label class="label_modal">
+                                        <span style="display: block; font-size: 15px;">Вторая вершина</span>
+                                        <input class="input_black" type="text" name="secondid" />
+                                    </label>
+                                    <select class="dropdown_edge_modal" name=type>
+                                        <option>Тип связи</option>
+                                        <option>Братья</option>
+                                        <option>Друзья</option>
+                                        <option>Влюбленные</option>
+                                    </select>
+                                </div>
+                                <button class="create_edge">Создать</button>
                               </div>
                             </form>
                         </div>
@@ -181,20 +198,22 @@
                               </div>
                               <div class="modal-body">
                                 <p>Укажите атрибуты вершины:</p>
-                                <label class="label_modal">
-                                    <span style="display: block;">Имя*</span>
-                                    <input class="input_black" type="text" name=firstname/>
-                                </label>
-                                <label class="label_modal">
-                                    <span style="display: block;">Фамилия*</span>
-                                    <input class="input_black" type="text"name=surname />
-                                </label>
-                                <label class="label_modal">
-                                    <span style="display: block;">Отчество</span>
-                                    <input class="input_black" type="text" name = patro />
-                                </label>
+                                <div class="add_nodes">
+                                    <label class="label_modal">
+                                        <span style="display: block;">Имя*</span>
+                                        <input class="input_black" type="text" name=firstname/>
+                                    </label>
+                                    <label class="label_modal">
+                                        <span style="display: block;">Фамилия*</span>
+                                        <input class="input_black" type="text"name=surname />
+                                    </label>
+                                    <label class="label_modal">
+                                        <span style="display: block;">Отчество</span>
+                                        <input class="input_black" type="text" name = patro />
+                                    </label>
+                                </div>
                               </div>
-                              <button type=submit value=Upload>Добавить</button>
+                              <button type=submit value=Upload class="create_edge">Добавить</button>
                             </form>
                         </div>
                         <script lang="JavaScript">

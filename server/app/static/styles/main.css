@@ -118,6 +118,20 @@ body{
     color: #f1f1f1;
 }
 
+.dropdown-menu-export {
+  width: 75%;
+  color: #fff;
+  background-color: #393939;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #FFF;
+}
+
+.dropdown_metrick {
+  border-radius: 30px;
+}
+
 .main {
     margin-left: 350px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
@@ -131,11 +145,57 @@ body{
 
 .panel_graph {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
 
+.generate {
+  margin: 5px;
+  padding: 20px 0px 20px;
+  border-radius: 25px;
+  border: 1px solid #FFF;
+}
+
+.create_edge {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 5px 34px 6px 34px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: none;
+  cursor: pointer;
+}
+
+.add_nodes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.dropdown_edge_modal {
+  background-color: #E1E1E1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000;
+}
+
+.data_edge {
+  display: flex;
+  justify-content: space-between;
+}
+
 .upload_file {
+  display: block;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 6px 40px 5px 41px;
   border-radius: 25px;
   background: #CFCFCF;
@@ -229,10 +289,17 @@ body{
   }
 
   .border_url {
-    margin: 10px 5px 10px 0px;
+    margin: 10px 5px 10px 5px;
     padding: 20px 0px 20px;
     border-radius: 25px;
     border: 1px solid #FFF;
+  }
+  .border_url_export {
+    margin: 10px 5px 10px 5px;
+    border-radius: 25px;
+    padding: 20px 0px 20px;
+    border: 1px solid #FFF;
+    text-align: center;
   }
   .tab-switch:checked + .tab-label {
     color: #000;
@@ -457,7 +524,7 @@ body{
   color: inherit;
   outline: none;
   border-bottom: 2px solid #000000;
-  width: 315px;
+  width: 150px;
 }
 
 .label_modal {
