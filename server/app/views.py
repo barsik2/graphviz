@@ -120,6 +120,12 @@ def add_edge(name_project):
 
 
         return redirect(url_for(f'main', name_project = name_project))
+    
+@app.route('/select_node', methods=['POST', 'GET'])
+def select_node():
+    print(request.get_json())
+
+    return request.get_json()
 
 def main():
     app.run(HOST, PORT, debug=DEBUG, threaded=THREADED)
