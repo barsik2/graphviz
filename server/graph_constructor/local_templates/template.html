@@ -33,7 +33,6 @@
 
         {% endif %}
 <center>
-<h1>{{heading}}</h1>
 </center>
 
 <!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
@@ -52,7 +51,6 @@
 
 
         <center>
-          <h1>{{heading}}</h1>
         </center>
         <style type="text/css">
 
@@ -254,10 +252,13 @@
         {% endif %}
 
         <script type="text/javascript">
+            var project_name = {{ project_name|tojson|safe }};
+
             function sendPostRequest(nodeId) {
             // Создайте объект данных для отправки на сервер
                 var data = {
-                    nodeId: nodeId
+                    nodeId: nodeId,
+                    project_name: project_name
                     // Другие данные, которые вы хотите отправить
                 };
 

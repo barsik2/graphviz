@@ -8,7 +8,7 @@ class GVNetwork(Network):
         self.template_new_dir = os.path.dirname(__file__) + "/local_templates/"
         self.templateNewEnv = Environment(loader=FileSystemLoader(self.template_new_dir))
 
-    def generate_html(self, name="index.html", local=True, notebook=False, loc_template = "template.html"):
+    def generate_html(self, project_name, name="index.html", local=True, notebook=False, loc_template = "template.html"):
         """
         This method gets the data structures supporting the nodes, edges,
         and options and updates the template to write the HTML holding
@@ -52,6 +52,7 @@ class GVNetwork(Network):
                                     nodes=nodes,
                                     edges=edges,
                                     heading=heading,
+                                    project_name = project_name,
                                     options=options,
                                     physics_enabled=physics_enabled,
                                     use_DOT=self.use_DOT,
@@ -72,4 +73,4 @@ class GVNetwork(Network):
 if __name__ == "__main__":
     mynw = GVNetwork()
     mynw.add_node(0, label = "Я котик")
-    mynw.save_graph('kotik.html')
+    mynw.generate_html(name='kotik.html', project_name="kotik.html")
