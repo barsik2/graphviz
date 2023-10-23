@@ -103,13 +103,13 @@
                     <label class="text_header_sidenav_harac">Отображение характеристик графа</label>
                 </div>
                 <div class="border_url">
-                    <label style="display: block;color: white; padding-left: 10px;">Количество вершин: 842</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Количество ребер: 8742</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Количество вершин: {{len_nodes}}</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Количество ребер: {{len_edges}}</label>
                     <label style="display: block;color: white; padding-left: 10px;">Типы связей: Братья</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: 842</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: 842</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Центр: 842</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: 842</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: ??</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: ??</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Центр: ??</label>
+                    <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: ??</label>
                 </div>
                 <div class="border_url_export">
                     <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
@@ -127,7 +127,7 @@
 
               <div class="main">
                 <p>{{name_project}}</p>
-                <input class="input_name_graph" placeholder="Имя графа" type="text" />
+                <!-- <input class="input_name_graph" placeholder="Имя графа" type="text" /> -->
 
                 <div class="panel_graph">
                     <select class="dropdown_metrick">
@@ -141,7 +141,7 @@
                         <button id="btn_add_edge" class="btn_add">Добавить отношение</button>
 
                         <div id="modalEdge" class="modal_edge">
-                            <form class="modal-content-edge" method=post action="/add_edge" enctype=multipart/form-data>
+                            <form class="modal-content-edge" method=post action={{add_edge_path}} enctype=multipart/form-data>
                               <div class="modal-header-edge">
                                 <span class="close-edge">&times;</span>
                                 <h2>Добавить отношение</h2>
@@ -191,7 +191,7 @@
                         <button id="myBtn" class="btn_add">Добавить вершину</button>
 
                         <div id="myModal" class="modal">
-                            <form class="modal-content" method=post action={{add_path}} enctype=multipart/form-data>
+                            <form class="modal-content" method=post action={{add_node_path}} enctype=multipart/form-data>
                               <div class="modal-header">
                                 <span class="close">&times;</span>
                                 <h2>Добавить вершину</h2>

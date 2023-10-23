@@ -17,11 +17,18 @@ def hello():
 @app.route('/main/<name_project>')
 def main(name_project):
     nx_file = f"nx/{name_project}/{name_project}.html"
-    add_path = f"/{name_project}/add_node"
+    add_node_path = f"/{name_project}/add_node"
+    add_edge_path = f"/{name_project}/add_edge"
+
+    G = nx.read_graphml(f"server/app/static/nx/{name_project}/{name_project}.graphml")
+
+    len_nodes = (len(G.nodes))
+    len_edges = (len(G.edges))
     
     return render_template('main.html', 
     nx_file = nx_file, name_project = name_project,
-    add_path = add_path
+    add_node_path = add_node_path, add_edge_path = add_edge_path,
+    len_nodes = len_nodes, len_edges = len_edges
     )
 
 @app.route('/new_project', methods=['POST', 'GET'])
@@ -79,7 +86,7 @@ def add_node(name_project):
         g = Network()
         G = nx.read_graphml(f"server/app/static/nx/{name_project}/{name_project}.graphml")
         node_attributes = {
-            "name": name,
+            "label": name,
             "title": f"{surname}/{patro}",
         }
         
@@ -94,21 +101,25 @@ def add_node(name_project):
         return redirect(url_for(f'main', name_project = name_project))
 
 
-@app.route('/add_edge', methods=['POST', 'GET'])
-def add_edge():
+@app.route('/<name_project>/add_edge', methods=['POST', 'GET'])
+def add_edge(name_project):
         print(request.form)
         firstid = request.form['firstid']
         secondid = request.form['secondid']
         type_data = request.form['type']
 
-        print(g.nodes)
+        G = nx.read_graphml(f"server/app/static/nx/{name_project}/{name_project}.graphml")
+        g = Network()
 
-        g.add_edge(int(firstid), int(secondid), type_data = type_data)
-        g.save_graph('server/app/templates/nx.html')
+        G.add_edge(int(firstid), int(secondid), type_data = type_data)
+        g.from_nx(G)
+
+        nx.write_graphml(G, f'server/app/static/nx/{name_project}/{name_project}.graphml')
+        g.save_graph(f'server/app/static/nx/{name_project}/{name_project}.html')
 
 
 
-        return redirect(url_for('hello'))
+        return redirect(url_for(f'main', name_project = name_project))
 
 def main():
     app.run(HOST, PORT, debug=DEBUG, threaded=THREADED)
