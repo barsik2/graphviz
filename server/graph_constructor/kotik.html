@@ -58,7 +58,7 @@
         
 
         <script type="text/javascript">
-            var project_name = "index.html";
+            var project_name = "kotik";
 
             function sendPostRequest(nodeId) {
             // Создайте объект данных для отправки на сервер
@@ -79,11 +79,9 @@
             };
 
             // Выполните POST-запрос на ваш локальный сервер
-            fetch('http://localhost:5000/select_node', options).then(function(response) {
+            fetch(`http://localhost:5000/${project_name}/select_node`, options).then(function(response) {
                 if (response.status === 200) {
-                // Обработайте успешный ответ от сервера, если необходимо
             } else {
-                // Обработайте ошибку, если запрос не удался
                 console.error('Ошибка при выполнении POST-запроса');
             }
             }).catch(function(error) {

@@ -8,7 +8,6 @@
             
         
 <center>
-<h1></h1>
 </center>
 
 <!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
@@ -27,7 +26,6 @@
 
 
         <center>
-          <h1></h1>
         </center>
         <style type="text/css">
 
@@ -60,6 +58,11 @@
         
 
         <script type="text/javascript">
+            function sendMessageToParent(selectedNodeId) {
+            window.parent.postMessage(selectedNodeId, '*');
+        }
+
+
 
               // initialize global variables.
               var edges;
@@ -88,7 +91,7 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": 0, "name": "asfasf", "shape": "dot", "size": 10, "title": "\u044f\u0447\u043c\u044f/\u044f\u0447\u043c\u044f\u0447"}]);
+                  nodes = new vis.DataSet([]);
                   edges = new vis.DataSet([]);
 
                   nodeColors = {};
@@ -136,6 +139,14 @@
                   
 
                   network = new vis.Network(container, data, options);
+                  network.on('selectNode', function (event) {
+                    var selectedNodeId = event.nodes[0];
+                    sendMessageToParent(selectedNodeId);
+                });
+                network.on("deselectNode", function (params) {
+                    sendMessageToParent(null);
+                });
+
 
                   
 

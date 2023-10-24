@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="width" attr.type="long"/>
+<key id="d5" for="node" attr.name="size" attr.type="long"/>
+<key id="d4" for="node" attr.name="username" attr.type="string"/>
+<key id="d3" for="node" attr.name="phone_number" attr.type="string"/>
+<key id="d2" for="node" attr.name="fio" attr.type="string"/>
+<key id="d1" for="node" attr.name="title" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="0">
+  <data key="d0">Анатолий</data>
+  <data key="d1">ФИО: Савельев Анатолий Георгиевич/ ID: 0</data>
+  <data key="d2">Савельев Анатолий Георгиевич</data>
+  <data key="d3">+7-(968)-528-11-84</data>
+  <data key="d4">martial_2002</data>
+  <data key="d5">10</data>
+</node>
+<node id="1">
+  <data key="d0">Бажена</data>
+  <data key="d1">ФИО: Олтухова Бажена Вадимовна/ ID: 1</data>
+  <data key="d2">Олтухова Бажена Вадимовна</data>
+  <data key="d3">+7-(965)-169-27-79</data>
+  <data key="d4">testimony_2059</data>
+  <data key="d5">10</data>
+</node>
+<node id="2">
+  <data key="d0">Хрисанф</data>
+  <data key="d1">ФИО: Каминский Хрисанф Геннадьевич/ ID: 2</data>
+  <data key="d2">Каминский Хрисанф Геннадьевич</data>
+  <data key="d3">+7-(914)-585-14-54</data>
+  <data key="d4">standings_1902</data>
+  <data key="d5">10</data>
+</node>
+<node id="3">
+  <data key="d0">Марианна</data>
+  <data key="d1">ФИО: Чехова Марианна Ильна/ ID: 3</data>
+  <data key="d2">Чехова Марианна Ильна</data>
+  <data key="d3">+7-(968)-561-95-45</data>
+  <data key="d4">rings_1889</data>
+  <data key="d5">10</data>
+</node>
+<node id="4">
+  <data key="d0">Агапия</data>
+  <data key="d1">ФИО: Дорофеева Агапия Демьяновна/ ID: 4</data>
+  <data key="d2">Дорофеева Агапия Демьяновна</data>
+  <data key="d3">+7-(933)-173-65-10</data>
+  <data key="d4">attempt_1998</data>
+  <data key="d5">10</data>
+</node>
+<node id="5">
+  <data key="d0">Сажида</data>
+  <data key="d1">ФИО: Радугина Сажида Давидовна/ ID: 5</data>
+  <data key="d2">Радугина Сажида Давидовна</data>
+  <data key="d3">+7-(930)-853-00-27</data>
+  <data key="d4">manor_1829</data>
+  <data key="d5">10</data>
+</node>
+<edge source="2" target="4">
+  <data key="d6">1</data>
+</edge>
+<edge source="2" target="5">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="4">
+  <data key="d6">1</data>
+</edge>
+</graph></graphml>

@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d7" for="edge" attr.name="type_data" attr.type="string"/>
+<key id="d6" for="edge" attr.name="width" attr.type="long"/>
+<key id="d5" for="node" attr.name="size" attr.type="long"/>
+<key id="d4" for="node" attr.name="username" attr.type="string"/>
+<key id="d3" for="node" attr.name="phone_number" attr.type="string"/>
+<key id="d2" for="node" attr.name="fio" attr.type="string"/>
+<key id="d1" for="node" attr.name="title" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="0">
+  <data key="d0">Пафнутий</data>
+  <data key="d1">ФИО: Долженко Пафнутий Харламович/ ID: 0</data>
+  <data key="d2">Долженко Пафнутий Харламович</data>
+  <data key="d3">+7-(999)-214-59-29</data>
+  <data key="d4">career_2016</data>
+  <data key="d5">10</data>
+</node>
+<node id="1">
+  <data key="d0">Иулиан</data>
+  <data key="d1">ФИО: Стародубцев Иулиан Юлианович/ ID: 1</data>
+  <data key="d2">Стародубцев Иулиан Юлианович</data>
+  <data key="d3">+7-(999)-042-60-72</data>
+  <data key="d4">sounds_2095</data>
+  <data key="d5">10</data>
+</node>
+<node id="2">
+  <data key="d0">Златослава</data>
+  <data key="d1">ФИО: Антипина Златослава Витальевна/ ID: 2</data>
+  <data key="d2">Антипина Златослава Витальевна</data>
+  <data key="d3">+7-(911)-921-20-91</data>
+  <data key="d4">ddr_2033</data>
+  <data key="d5">10</data>
+</node>
+<node id="3">
+  <data key="d0">Борис</data>
+  <data key="d1">ФИО: Остратов Борис Эдгарович/ ID: 3</data>
+  <data key="d2">Остратов Борис Эдгарович</data>
+  <data key="d3">+7-(967)-313-99-40</data>
+  <data key="d4">hanging_1801</data>
+  <data key="d5">10</data>
+</node>
+<node id="4">
+  <data key="d0">Севастьян</data>
+  <data key="d1">ФИО: Поликарпов Севастьян Яковлевич/ ID: 4</data>
+  <data key="d2">Поликарпов Севастьян Яковлевич</data>
+  <data key="d3">+7-(939)-643-06-98</data>
+  <data key="d4">receivers_1967</data>
+  <data key="d5">10</data>
+</node>
+<node id="5">
+  <data key="d0">Вилена</data>
+  <data key="d1">ФИО: Василева Вилена Ефимовна/ ID: 5</data>
+  <data key="d2">Василева Вилена Ефимовна</data>
+  <data key="d3">+7-(968)-825-08-79</data>
+  <data key="d4">deny_1981</data>
+  <data key="d5">10</data>
+</node>
+<node id="6">
+  <data key="d0">Мелисса</data>
+  <data key="d1">ФИО: Развожаева Мелисса Даниловна/ ID: 6</data>
+  <data key="d2">Развожаева Мелисса Даниловна</data>
+  <data key="d3">+7-(999)-600-53-93</data>
+  <data key="d4">possible_1930</data>
+  <data key="d5">10</data>
+</node>
+<node id="7">
+  <data key="d0">Нестор</data>
+  <data key="d1">ФИО: Афанасьев Нестор Трофимович/ ID: 7</data>
+  <data key="d2">Афанасьев Нестор Трофимович</data>
+  <data key="d3">+7-(920)-546-04-83</data>
+  <data key="d4">segment_1857</data>
+  <data key="d5">10</data>
+</node>
+<node id="8">
+  <data key="d0">Владимир</data>
+  <data key="d1">ФИО: Созонов Владимир Харлампович/ ID: 8</data>
+  <data key="d2">Созонов Владимир Харлампович</data>
+  <data key="d3">+7-(937)-937-08-56</data>
+  <data key="d4">detection_1995</data>
+  <data key="d5">10</data>
+</node>
+<node id="9">
+  <data key="d0">Павел</data>
+  <data key="d1">ФИО: Пахомьев Павел Харламович/ ID: 9</data>
+  <data key="d2">Пахомьев Павел Харламович</data>
+  <data key="d3">+7-(999)-393-87-19</data>
+  <data key="d4">consortium_1980</data>
+  <data key="d5">10</data>
+</node>
+<node id="10">
+  <data key="d0">Прокопий</data>
+  <data key="d1">ФИО: Скапидаров Прокопий Адрианович/ ID: 10</data>
+  <data key="d2">Скапидаров Прокопий Адрианович</data>
+  <data key="d3">+7-(968)-206-04-63</data>
+  <data key="d4">individual_1922</data>
+  <data key="d5">10</data>
+</node>
+<node id="11">
+  <data key="d0">Юлиан</data>
+  <data key="d1">ФИО: Севастьянов Юлиан Ефимович/ ID: 11</data>
+  <data key="d2">Севастьянов Юлиан Ефимович</data>
+  <data key="d3">+7-(960)-490-35-48</data>
+  <data key="d4">exist_1972</data>
+  <data key="d5">10</data>
+</node>
+<node id="12">
+  <data key="d0">Пров</data>
+  <data key="d1">ФИО: Безбатько Пров Эдгардович/ ID: 12</data>
+  <data key="d2">Безбатько Пров Эдгардович</data>
+  <data key="d3">+7-(999)-128-11-93</data>
+  <data key="d4">boring_1912</data>
+  <data key="d5">10</data>
+</node>
+<node id="13">
+  <data key="d0">Порфирий</data>
+  <data key="d1">ФИО: Цыпкин Порфирий Владленович/ ID: 13</data>
+  <data key="d2">Цыпкин Порфирий Владленович</data>
+  <data key="d3">+7-(909)-427-27-36</data>
+  <data key="d4">launches_2032</data>
+  <data key="d5">10</data>
+</node>
+<node id="14">
+  <data key="d0">Иллирика</data>
+  <data key="d1">ФИО: Брежнева Иллирика Ермолаевна/ ID: 14</data>
+  <data key="d2">Брежнева Иллирика Ермолаевна</data>
+  <data key="d3">+7-(922)-153-30-90</data>
+  <data key="d4">settle_2021</data>
+  <data key="d5">10</data>
+</node>
+<node id="15">
+  <data key="d0">Арслан</data>
+  <data key="d1">Мяу/Игоревич</data>
+  <data key="d5">10</data>
+</node>
+<node id="5">
+  <data key="d5">10</data>
+</node>
+<node id="11">
+  <data key="d5">10</data>
+</node>
+<edge source="0" target="4">
+  <data key="d6">1</data>
+</edge>
+<edge source="0" target="8">
+  <data key="d6">1</data>
+</edge>
+<edge source="0" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="0" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="0" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="3">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="5">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="13">
+  <data key="d6">1</data>
+</edge>
+<edge source="2" target="3">
+  <data key="d6">1</data>
+</edge>
+<edge source="2" target="6">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="6">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="4" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="4" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="4" target="13">
+  <data key="d6">1</data>
+</edge>
+<edge source="5" target="6">
+  <data key="d6">1</data>
+</edge>
+<edge source="5" target="13">
+  <data key="d6">1</data>
+</edge>
+<edge source="6" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="6" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="6" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="7" target="8">
+  <data key="d6">1</data>
+</edge>
+<edge source="7" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="7" target="10">
+  <data key="d6">1</data>
+</edge>
+<edge source="7" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="7" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="8" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="8" target="10">
+  <data key="d6">1</data>
+</edge>
+<edge source="8" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="9" target="10">
+  <data key="d6">1</data>
+</edge>
+<edge source="9" target="13">
+  <data key="d6">1</data>
+</edge>
+<edge source="9" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="11" target="14">
+  <data key="d6">1</data>
+</edge>
+<edge source="5" target="11">
+  <data key="d7">Братья</data>
+  <data key="d6">1</data>
+</edge>
+</graph></graphml>

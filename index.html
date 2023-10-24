@@ -8,7 +8,6 @@
             
         
 <center>
-<h1></h1>
 </center>
 
 <!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
@@ -27,7 +26,6 @@
 
 
         <center>
-          <h1></h1>
         </center>
         <style type="text/css">
 
@@ -60,6 +58,37 @@
         
 
         <script type="text/javascript">
+            var project_name = "server/app/static/nx/egor_project/egor_project.html";
+
+            function sendPostRequest(nodeId) {
+            // Создайте объект данных для отправки на сервер
+                var data = {
+                    nodeId: nodeId,
+                    project_name: project_name
+                    // Другие данные, которые вы хотите отправить
+                };
+
+            // Опции для POST-запроса
+            var options = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                    // Другие заголовки, если необходимо
+                }
+            };
+
+            // Выполните POST-запрос на ваш локальный сервер
+            fetch(`http://localhost:5000/${project_name}/select_node`, options).then(function(response) {
+                if (response.status === 200) {
+            } else {
+                console.error('Ошибка при выполнении POST-запроса');
+            }
+            }).catch(function(error) {
+                    console.error('Ошибка при выполнении POST-запроса: ' + error);
+                });
+        }
+
 
               // initialize global variables.
               var edges;
@@ -88,7 +117,7 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "0", "label": "0", "name": "\u0415\u0433\u043e\u0440", "shape": "dot", "size": 10, "title": "\u0410\u043d\u0438\u043c\u0435/\u0415\u0433\u043e\u0440\u043e\u0432\u0438\u0447"}, {"color": "#97c2fc", "id": 1, "label": 1, "name": "\u0415\u0433\u043e\u0440", "shape": "dot", "size": 10, "title": "\u0444\u044b\u0430/\u0444\u044b\u0430\u0444\u044b\u0430"}]);
+                  nodes = new vis.DataSet([]);
                   edges = new vis.DataSet([]);
 
                   nodeColors = {};
@@ -136,6 +165,11 @@
                   
 
                   network = new vis.Network(container, data, options);
+                  network.on('selectNode', function (event) {
+                    var selectedNodeId = event.nodes[0];
+                    sendPostRequest(selectedNodeId);
+                });
+
 
                   
 

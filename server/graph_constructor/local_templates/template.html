@@ -252,38 +252,10 @@
         {% endif %}
 
         <script type="text/javascript">
-            var project_name = {{ project_name|tojson|safe }};
-
-            function sendPostRequest(nodeId) {
-            // Создайте объект данных для отправки на сервер
-                var data = {
-                    nodeId: nodeId,
-                    project_name: project_name
-                    // Другие данные, которые вы хотите отправить
-                };
-
-            // Опции для POST-запроса
-            var options = {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                    // Другие заголовки, если необходимо
-                }
-            };
-
-            // Выполните POST-запрос на ваш локальный сервер
-            fetch('http://localhost:5000/select_node', options).then(function(response) {
-                if (response.status === 200) {
-                // Обработайте успешный ответ от сервера, если необходимо
-            } else {
-                // Обработайте ошибку, если запрос не удался
-                console.error('Ошибка при выполнении POST-запроса');
-            }
-            }).catch(function(error) {
-                    console.error('Ошибка при выполнении POST-запроса: ' + error);
-                });
+            function sendMessageToParent(selectedNodeId) {
+            window.parent.postMessage(selectedNodeId, '*');
         }
+
 
 
               // initialize global variables.
@@ -488,7 +460,10 @@
                   network = new vis.Network(container, data, options);
                   network.on('selectNode', function (event) {
                     var selectedNodeId = event.nodes[0];
-                    sendPostRequest(selectedNodeId);
+                    sendMessageToParent(selectedNodeId);
+                });
+                network.on("deselectNode", function (params) {
+                    sendMessageToParent(null);
                 });
 
 
@@ -496,7 +471,7 @@
                     network.on("click", function(params) {
                         if (params.nodes.length > 0) {
                             var selectedNodeId = params.nodes[0];
-                            sendPostRequest(selectedNodeId);
+                            sendMessageToParent();
                         }
                     });
                   {% endif %}
@@ -505,7 +480,7 @@
                     network.on("selectNode",  function(params) {
                         if (params.nodes.length > 0) {
                             var selectedNodeId = params.nodes[0];
-                            sendPostRequest(selectedNodeId);
+                            sendMessageToParent();
                         }
                     }
                     

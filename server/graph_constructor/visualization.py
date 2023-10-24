@@ -8,7 +8,7 @@ class GVNetwork(Network):
         self.template_new_dir = os.path.dirname(__file__) + "/local_templates/"
         self.templateNewEnv = Environment(loader=FileSystemLoader(self.template_new_dir))
 
-    def generate_html(self, project_name, name="index.html", local=True, notebook=False, loc_template = "template.html"):
+    def loc_generate_html(self, project_name, name="index.html", local=True, notebook=False, loc_template = "template.html"):
         """
         This method gets the data structures supporting the nodes, edges,
         and options and updates the template to write the HTML holding
@@ -67,10 +67,12 @@ class GVNetwork(Network):
                                     notebook=notebook,
                                     cdn_resources=self.cdn_resources
                                     )
-        return self.html
+        with open(name, "w+") as out:
+                out.write(self.html)
+        # return self.html
 
 
 if __name__ == "__main__":
     mynw = GVNetwork()
     mynw.add_node(0, label = "Я котик")
-    mynw.generate_html(name='kotik.html', project_name="kotik.html")
+    mynw.loc_generate_html("kotik", name='kotik.html')
