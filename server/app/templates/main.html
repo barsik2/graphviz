@@ -92,7 +92,39 @@
                                         Какой то другой способ
                                     </option>
                                 </select>
-                                <button class="upload_file">Сгенерировать</button>
+                                <button id="btn_generate" class="upload_file">Сгенерировать</button>
+
+                                <div id="modalGenerate" class="modal_generate">
+                                      <div class="modal-header-generate">
+                                        <span class="close-generate">&times;</span>
+                                      </div>
+                                      <div class="modal-body-generate">
+                                        <p>Вы уверены, что хотите сгенерировать граф с выбранными параметрами?</p>
+                                      </div>
+                                      <div class="modal-footer-generate">
+                                        <button>Нет</button>
+                                        <button>Да</button>
+                                      </div>
+                                </div>
+                                <script lang="JavaScript">
+                                    var modal_generate = document.getElementById('modalGenerate');
+                                    var btn_generate = document.getElementById("btn_generate");
+                                    var span_generate = document.getElementsByClassName("close-generate")[0];
+
+                                    btn_generate.onclick = function() {
+                                        modal_generate.style.display = "block";
+                                    }
+
+                                    span_generate.onclick = function() {
+                                        modal_generate.style.display = "none";
+                                    }
+
+                                    window.onclick = function(event) {
+                                        if (event.target == modal_generate) {
+                                            modal_generate.style.display = "none";
+                                        }
+                                    }
+                                </script>
                             </form>
                         </div>
                     </div>
@@ -274,7 +306,40 @@
                     </div>
 
                     <div class="btn_nav_all">
-                        <button class="btn_nav">Удалить</button>
+                        <button id="btn_delete_nodes" class="btn_nav">Удалить</button>
+
+                        <div id="modalDelete" class="modal_generate">
+                            <div class="modal-header-delete">
+                              <span class="close-delete">&times;</span>
+                            </div>
+                            <div class="modal-body-delete">
+                              <p>Вы уверены, что хотите сгенерировать граф с выбранными параметрами?</p>
+                            </div>
+                            <div class="modal-footer-delete">
+                              <button>Нет</button>
+                              <button>Да</button>
+                            </div>
+                      </div>
+                      <script lang="JavaScript">
+                          var modal_delete = document.getElementById('modalDelete');
+                          var btn_delete_nodes = document.getElementById("btn_delete_nodes");
+                          var span_delete = document.getElementsByClassName("close-delete")[0];
+
+                          btn_delete_nodes.onclick = function() {
+                            modal_delete.style.display = "block";
+                          }
+
+                          span_delete.onclick = function() {
+                            modal_delete.style.display = "none";
+                          }
+
+                          window.onclick = function(event) {
+                              if (event.target == modal_delete) {
+                                modal_delete.style.display = "none";
+                              }
+                          }
+                      </script>
+
                         <button class="btn_nav">Дублировать</button>
                         <button class="btn_nav">Редактировать</button>
                         <button class="btn_nav">Соединить</button>
@@ -299,13 +364,13 @@
 
 
         var condition = false; // Замените на ваше условие
-        
+
         function updateDisplay() {
             if (condition) {
-                resultElement.style.display = 'none'; 
+                resultElement.style.display = 'none';
                 container.style.display = 'block'; // Показать контейнер
             } else {
-                resultElement.style.display = 'block'; 
+                resultElement.style.display = 'block';
                 container.style.display = 'none'; // Скрыть контейнер
             }
         }
