@@ -1,66 +1,287 @@
 <?xml version='1.0' encoding='utf-8'?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="width" attr.type="long"/>
-<key id="d5" for="node" attr.name="size" attr.type="long"/>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d9" for="edge" attr.name="width" attr.type="double"/>
+<key id="d8" for="edge" attr.name="id" attr.type="long"/>
+<key id="d7" for="edge" attr.name="type" attr.type="long"/>
+<key id="d6" for="node" attr.name="size" attr.type="long"/>
+<key id="d5" for="node" attr.name="color" attr.type="string"/>
 <key id="d4" for="node" attr.name="username" attr.type="string"/>
 <key id="d3" for="node" attr.name="phone_number" attr.type="string"/>
 <key id="d2" for="node" attr.name="fio" attr.type="string"/>
 <key id="d1" for="node" attr.name="title" attr.type="string"/>
 <key id="d0" for="node" attr.name="label" attr.type="string"/>
-<graph edgedefault="undirected"><node id="0">
-  <data key="d0">Анатолий</data>
-  <data key="d1">ФИО: Савельев Анатолий Георгиевич/ ID: 0</data>
-  <data key="d2">Савельев Анатолий Георгиевич</data>
-  <data key="d3">+7-(968)-528-11-84</data>
-  <data key="d4">martial_2002</data>
-  <data key="d5">10</data>
+<graph edgedefault="directed"><node id="0">
+  <data key="d0">Мирослав</data>
+  <data key="d1">ФИО: Полоков Мирослав Витальевич / ID: 0</data>
+  <data key="d2">Полоков Мирослав Витальевич</data>
+  <data key="d3">+7-(968)-989-17-04</data>
+  <data key="d4">principal_2071</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
 </node>
 <node id="1">
-  <data key="d0">Бажена</data>
-  <data key="d1">ФИО: Олтухова Бажена Вадимовна/ ID: 1</data>
-  <data key="d2">Олтухова Бажена Вадимовна</data>
-  <data key="d3">+7-(965)-169-27-79</data>
-  <data key="d4">testimony_2059</data>
-  <data key="d5">10</data>
+  <data key="d0">Пантелеймон</data>
+  <data key="d1">ФИО: Шашков Пантелеймон Евстигнеевич / ID: 1</data>
+  <data key="d2">Шашков Пантелеймон Евстигнеевич</data>
+  <data key="d3">+7-(968)-452-12-39</data>
+  <data key="d4">deputy_1994</data>
+  <data key="d5">#7d7db6</data>
+  <data key="d6">10</data>
 </node>
 <node id="2">
-  <data key="d0">Хрисанф</data>
-  <data key="d1">ФИО: Каминский Хрисанф Геннадьевич/ ID: 2</data>
-  <data key="d2">Каминский Хрисанф Геннадьевич</data>
-  <data key="d3">+7-(914)-585-14-54</data>
-  <data key="d4">standings_1902</data>
-  <data key="d5">10</data>
+  <data key="d0">Бэлла</data>
+  <data key="d1">ФИО: Чиркова Бэлла Игоревна / ID: 2</data>
+  <data key="d2">Чиркова Бэлла Игоревна</data>
+  <data key="d3">+7-(964)-495-72-00</data>
+  <data key="d4">partners_2035</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
 </node>
 <node id="3">
-  <data key="d0">Марианна</data>
-  <data key="d1">ФИО: Чехова Марианна Ильна/ ID: 3</data>
-  <data key="d2">Чехова Марианна Ильна</data>
-  <data key="d3">+7-(968)-561-95-45</data>
-  <data key="d4">rings_1889</data>
-  <data key="d5">10</data>
+  <data key="d0">Спиридон</data>
+  <data key="d1">ФИО: Долин Спиридон Захарьевич / ID: 3</data>
+  <data key="d2">Долин Спиридон Захарьевич</data>
+  <data key="d3">+7-(961)-707-23-76</data>
+  <data key="d4">denmark_1878</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
 </node>
 <node id="4">
-  <data key="d0">Агапия</data>
-  <data key="d1">ФИО: Дорофеева Агапия Демьяновна/ ID: 4</data>
-  <data key="d2">Дорофеева Агапия Демьяновна</data>
-  <data key="d3">+7-(933)-173-65-10</data>
-  <data key="d4">attempt_1998</data>
-  <data key="d5">10</data>
+  <data key="d0">Платон</data>
+  <data key="d1">ФИО: Дриянский Платон Борисович / ID: 4</data>
+  <data key="d2">Дриянский Платон Борисович</data>
+  <data key="d3">+7-(911)-651-06-27</data>
+  <data key="d4">mime_1818</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
 </node>
 <node id="5">
-  <data key="d0">Сажида</data>
-  <data key="d1">ФИО: Радугина Сажида Давидовна/ ID: 5</data>
-  <data key="d2">Радугина Сажида Давидовна</data>
-  <data key="d3">+7-(930)-853-00-27</data>
-  <data key="d4">manor_1829</data>
-  <data key="d5">10</data>
+  <data key="d0">Владислав</data>
+  <data key="d1">ФИО: Ануров Владислав Аверьянович / ID: 5</data>
+  <data key="d2">Ануров Владислав Аверьянович</data>
+  <data key="d3">+7-(909)-731-29-07</data>
+  <data key="d4">elections_1890</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
 </node>
-<edge source="2" target="4">
-  <data key="d6">1</data>
+<node id="6">
+  <data key="d0">Тимофей</data>
+  <data key="d1">ФИО: Курилов Тимофей Ермилович / ID: 6</data>
+  <data key="d2">Курилов Тимофей Ермилович</data>
+  <data key="d3">+7-(968)-980-18-82</data>
+  <data key="d4">healthcare_2032</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
+</node>
+<node id="7">
+  <data key="d0">Саломея</data>
+  <data key="d1">ФИО: Шалыганова Саломея Жоресовна / ID: 7</data>
+  <data key="d2">Шалыганова Саломея Жоресовна</data>
+  <data key="d3">+7-(909)-502-79-87</data>
+  <data key="d4">relation_1904</data>
+  <data key="d5">#7d7d6d</data>
+  <data key="d6">10</data>
+</node>
+<node id="8">
+  <data key="d0">Иакинф</data>
+  <data key="d1">ФИО: Бабаченко Иакинф Артёмович / ID: 8</data>
+  <data key="d2">Бабаченко Иакинф Артёмович</data>
+  <data key="d3">+7-(957)-930-97-01</data>
+  <data key="d4">highway_2028</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
+</node>
+<node id="9">
+  <data key="d0">Артём</data>
+  <data key="d1">ФИО: Черепенников Артём Елизарович / ID: 9</data>
+  <data key="d2">Черепенников Артём Елизарович</data>
+  <data key="d3">+7-(911)-049-52-86</data>
+  <data key="d4">quite_1982</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
+</node>
+<node id="10">
+  <data key="d0">Георгий</data>
+  <data key="d1">ФИО: Чиков Георгий Фёдорович / ID: 10</data>
+  <data key="d2">Чиков Георгий Фёдорович</data>
+  <data key="d3">+7-(999)-651-70-87</data>
+  <data key="d4">forecast_1972</data>
+  <data key="d5">#7d7dda</data>
+  <data key="d6">10</data>
+</node>
+<node id="11">
+  <data key="d0">Руслана</data>
+  <data key="d1">ФИО: Ярина Руслана Архиповна / ID: 11</data>
+  <data key="d2">Ярина Руслана Архиповна</data>
+  <data key="d3">+7-(999)-620-25-85</data>
+  <data key="d4">examples_2055</data>
+  <data key="d5">#7d7d6d</data>
+  <data key="d6">10</data>
+</node>
+<node id="12">
+  <data key="d0">Эсмира</data>
+  <data key="d1">ФИО: Гомзикова Эсмира Фроловна / ID: 12</data>
+  <data key="d2">Гомзикова Эсмира Фроловна</data>
+  <data key="d3">+7-(968)-045-66-58</data>
+  <data key="d4">governance_1905</data>
+  <data key="d5">#7d7db6</data>
+  <data key="d6">10</data>
+</node>
+<node id="13">
+  <data key="d0">Карима</data>
+  <data key="d1">ФИО: Вотрина Карима Давидовна / ID: 13</data>
+  <data key="d2">Вотрина Карима Давидовна</data>
+  <data key="d3">+7-(909)-195-30-46</data>
+  <data key="d4">effort_1988</data>
+  <data key="d5">#7d7d6d</data>
+  <data key="d6">10</data>
+</node>
+<node id="14">
+  <data key="d0">Олег</data>
+  <data key="d1">ФИО: Данихнов Олег Валентинович / ID: 14</data>
+  <data key="d2">Данихнов Олег Валентинович</data>
+  <data key="d3">+7-(964)-210-48-73</data>
+  <data key="d4">congress_1836</data>
+  <data key="d5">#7d7d91</data>
+  <data key="d6">10</data>
+</node>
+<edge source="0" target="1" id="0">
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">0.4</data>
 </edge>
-<edge source="2" target="5">
-  <data key="d6">1</data>
+<edge source="1" target="0" id="0">
+  <data key="d7">0</data>
+  <data key="d8">1</data>
+  <data key="d9">0.2</data>
 </edge>
-<edge source="3" target="4">
-  <data key="d6">1</data>
+<edge source="1" target="11" id="0">
+  <data key="d7">0</data>
+  <data key="d8">2</data>
+  <data key="d9">0.1</data>
+</edge>
+<edge source="2" target="12" id="0">
+  <data key="d7">0</data>
+  <data key="d8">4</data>
+  <data key="d9">0.3</data>
+</edge>
+<edge source="3" target="7" id="0">
+  <data key="d7">0</data>
+  <data key="d8">6</data>
+  <data key="d9">0.9</data>
+</edge>
+<edge source="4" target="7" id="0">
+  <data key="d7">0</data>
+  <data key="d8">8</data>
+  <data key="d9">1.0</data>
+</edge>
+<edge source="5" target="14" id="0">
+  <data key="d7">0</data>
+  <data key="d8">10</data>
+  <data key="d9">0.4</data>
+</edge>
+<edge source="6" target="7" id="0">
+  <data key="d7">0</data>
+  <data key="d8">12</data>
+  <data key="d9">0.1</data>
+</edge>
+<edge source="7" target="3" id="0">
+  <data key="d7">0</data>
+  <data key="d8">7</data>
+  <data key="d9">0.3</data>
+</edge>
+<edge source="7" target="4" id="0">
+  <data key="d7">0</data>
+  <data key="d8">9</data>
+  <data key="d9">0.7</data>
+</edge>
+<edge source="7" target="6" id="0">
+  <data key="d7">0</data>
+  <data key="d8">13</data>
+  <data key="d9">0.8</data>
+</edge>
+<edge source="7" target="11" id="0">
+  <data key="d7">0</data>
+  <data key="d8">14</data>
+  <data key="d9">0.1</data>
+</edge>
+<edge source="8" target="11" id="0">
+  <data key="d7">0</data>
+  <data key="d8">16</data>
+  <data key="d9">0.2</data>
+</edge>
+<edge source="9" target="13" id="0">
+  <data key="d7">0</data>
+  <data key="d8">18</data>
+  <data key="d9">1.0</data>
+</edge>
+<edge source="10" target="13" id="0">
+  <data key="d7">0</data>
+  <data key="d8">20</data>
+  <data key="d9">0.1</data>
+</edge>
+<edge source="11" target="1" id="0">
+  <data key="d7">0</data>
+  <data key="d8">3</data>
+  <data key="d9">0.9</data>
+</edge>
+<edge source="11" target="7" id="0">
+  <data key="d7">0</data>
+  <data key="d8">15</data>
+  <data key="d9">0.7</data>
+</edge>
+<edge source="11" target="8" id="0">
+  <data key="d7">0</data>
+  <data key="d8">17</data>
+  <data key="d9">0.2</data>
+</edge>
+<edge source="11" target="14" id="0">
+  <data key="d7">0</data>
+  <data key="d8">22</data>
+  <data key="d9">0.2</data>
+</edge>
+<edge source="12" target="2" id="0">
+  <data key="d7">0</data>
+  <data key="d8">5</data>
+  <data key="d9">1.0</data>
+</edge>
+<edge source="12" target="13" id="0">
+  <data key="d7">0</data>
+  <data key="d8">24</data>
+  <data key="d9">0.5</data>
+</edge>
+<edge source="13" target="9" id="0">
+  <data key="d7">0</data>
+  <data key="d8">19</data>
+  <data key="d9">0.2</data>
+</edge>
+<edge source="13" target="10" id="0">
+  <data key="d7">0</data>
+  <data key="d8">21</data>
+  <data key="d9">0.9</data>
+</edge>
+<edge source="13" target="12" id="0">
+  <data key="d7">0</data>
+  <data key="d8">25</data>
+  <data key="d9">0.8</data>
+</edge>
+<edge source="13" target="14" id="0">
+  <data key="d7">0</data>
+  <data key="d8">26</data>
+  <data key="d9">0.7</data>
+</edge>
+<edge source="14" target="5" id="0">
+  <data key="d7">0</data>
+  <data key="d8">11</data>
+  <data key="d9">0.7</data>
+</edge>
+<edge source="14" target="11" id="0">
+  <data key="d7">0</data>
+  <data key="d8">23</data>
+  <data key="d9">0.8</data>
+</edge>
+<edge source="14" target="13" id="0">
+  <data key="d7">0</data>
+  <data key="d8">27</data>
+  <data key="d9">0.6</data>
 </edge>
 </graph></graphml>

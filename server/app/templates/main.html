@@ -211,6 +211,14 @@
                                         <span style="display: block;">Отчество</span>
                                         <input class="input_black" type="text" name = patro />
                                     </label>
+                                    <label class="label_modal">
+                                        <span style="display: block;">Номер телефона:</span>
+                                        <input class="input_black" type="text" name = phone />
+                                    </label>
+                                    <label class="label_modal">
+                                        <span style="display: block;">Имя пользователя</span>
+                                        <input class="input_black" type="text" name = username />
+                                    </label>
                                 </div>
                               </div>
                               <button type=submit value=Upload class="create_edge">Добавить</button>
@@ -256,7 +264,7 @@
                         <div class="create-line"></div>
 
                         <div class="first_info">
-                            <p class="text_info">Степень: 2</p>
+                            <p id="degree" class="text_info">Степень: 2</p>
                             <p class="text_info">Типы отношений: Вершина</p>
                             <p class="text_info">Средний коэффициент отношений: Вершина</p>
                             <p class="text_info">Влияние в соцсети: Вершина</p>
@@ -274,7 +282,7 @@
                     </div>
 
                     <div class="btn_nav_all">
-                        <button class="btn_nav">Удалить</button>
+                        <button id="delete_node" class="btn_nav">Удалить</button>
                         <button class="btn_nav">Дублировать</button>
                         <button class="btn_nav">Редактировать</button>
                         <button class="btn_nav">Соединить</button>
@@ -290,12 +298,42 @@
         const container = document.getElementById('info_graph');
         const resultElement = document.getElementById('info_hide');
 
+        var name_project = "{{ name_project }}";
+
         const typeInfo = document.querySelector('.text_info:nth-child(1)');
         const idInfo = document.querySelector('.text_info:nth-child(2)');
         const fioInfo = document.querySelector('.text_info:nth-child(3)');
         const phoneInfo = document.querySelector('.text_info:nth-child(4)');
         const userInfo = document.querySelector('.text_info:nth-child(5)');
-        const degreeInfo = document.querySelector('.text_info:nth-child(6)');
+        const degreeInfo = document.getElementById('degree');
+
+        const deleteNode = document.getElementById('delete_node');
+
+        deleteNode.addEventListener('click', function() {
+            console.log('sadasf')
+            var data = {
+                    nodeId: idInfo.textContent,
+                };
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            };
+            console.log('sadasf 2')
+            fetch(`http://localhost:5000/${name_project}/delete_node`, options).then(response => {
+                if (response.ok) {
+                    console.log('Запрос выполнен успешно');
+                    location.reload()
+                } else {
+                    console.error('Произошла ошибка при выполнении запроса');
+                }
+            }).catch(error => {
+                console.error('Произошла сетевая ошибка', error);
+            });
+        });
+
 
 
         var condition = false; // Замените на ваше условие
@@ -310,27 +348,20 @@
             }
         }
         updateDisplay();
-
-        var name_project = "{{ name_project }}";
         function sendPostRequest(nodeId) {
-            // Создайте объект данных для отправки на сервер
                 var data = {
                     nodeId: nodeId,
                     name_project: name_project
-                    // Другие данные, которые вы хотите отправить
                 };
 
-            // Опции для POST-запроса
             var options = {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
-                    // Другие заголовки, если необходимо
                 }
             };
 
-            // Выполните POST-запрос на ваш локальный сервер
             fetch(`http://localhost:5000/${name_project}/select_node`, options)
             .then(function(response) {
                 if (response.status === 200) {
@@ -347,14 +378,16 @@
                     if (jsonData.res_checker != null){
                         condition = true; // Обновить condition
 
+                        console.log(jsonData); // Вывод данных в консоль
+
                         typeInfo.textContent = 'Тип: ' + jsonData.type; // Предположим, что тип находится в свойстве "type" объекта "data"
                         idInfo.textContent = 'id: ' + jsonData.id; // Предположим, что id находится в свойстве "id" объекта "data"
                         fioInfo.textContent = 'ФИО: ' + jsonData.fio; // Предположим, что ФИО находится в свойстве "fio" объекта "data"\
                         phoneInfo.textContent = 'Телефон: ' + jsonData.phone_number; // Предположим, что ФИО находится в свойстве "fio" объекта "data"
                         userInfo.textContent = 'Никнейм: ' + jsonData.username;
-
-                        console.log(jsonData); // Вывод данных в консоль
+                        degreeInfo.textContent = "Степень: " + jsonData.degree;
                         updateDisplay();
+                        
                     }else{
                         condition = false; // Обновить condition
                         updateDisplay();

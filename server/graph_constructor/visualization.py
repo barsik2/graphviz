@@ -3,8 +3,8 @@ from pyvis.network import Network
 from jinja2 import Environment, FileSystemLoader
 
 class GVNetwork(Network):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, directed = False):
+        super().__init__(directed = directed)
         self.template_new_dir = os.path.dirname(__file__) + "/local_templates/"
         self.templateNewEnv = Environment(loader=FileSystemLoader(self.template_new_dir))
 
