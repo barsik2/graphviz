@@ -15,7 +15,7 @@ h1 {
 }
 
 .start_text {
-    margin-top: 250px;
+    margin-top: 100px;
     color: black;
     text-align: center;
 }
@@ -53,4 +53,73 @@ h1 {
 .logo {
     margin-top: 40px;
     text-align: center;
+}
+
+.cont_type {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25%;
+    width: 50%;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.type_nodes {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 10px;
+    padding: 20px 90px 20px 50px;
+}
+
+.input_nodes {
+    display: flex;
+    /* grid-template-columns: 2fr; */
+    /* display: flex; */
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: 25px;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.type_edges {
+    padding: 20px 90px 20px 50px;
+}
+
+.text_h3 {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.create-line {
+    text-align: center;
+    margin: 14px 0px 14px 0px;
+    height: 250px;
+    width: 1px;
+    border-radius: 20px;
+    border-right: 3px solid #000000;
+}
+
+.btn_add {
+    padding: 8px 6px 9px 6px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.input_type {
+    padding: 9px 109px 9px 14px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
