@@ -131,29 +131,93 @@
                 </div>
               </div>
               <div class="sidenavTwo">
-                <div class="header_sidenav_harac">
-                    <label class="text_header_sidenav_harac">Отображение характеристик графа</label>
-                </div>
-                <div class="border_url">
-                    <label style="display: block;color: white; padding-left: 10px;">Количество вершин: {{len_nodes}}</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Количество ребер: {{len_edges}}</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Типы связей: Братья</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: ??</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: {{max_degree}}</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Центр: {{center_nodes}}</label>
-                    <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: ??</label>
-                </div>
-                <div class="border_url_export">
-                    <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
-                    <select class="dropdown-menu-export">
-                        <option value="1">
-                            .csv
-                        </option>
-                        <option value="2">
-                            .xlsx
-                        </option>
-                    </select>
-                    <button class="upload_file">Экспортировать</button>
+
+                <div class="tabs">
+                    <div class="tab">
+                        <input type="radio" name="sidenavTwo-tabs" id="sidenavTwo-tab-1" checked class="tab-switch">
+                        <label for="sidenavTwo-tab-1" class="tab-label">Характеристики</label>
+                        <div id="sidenavTwo-tab-1-content" class="tab-content">
+                            <div class="border_url">
+                                <label style="display: block;color: white; padding-left: 10px;">Количество вершин: {{len_nodes}}</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Количество ребер: {{len_edges}}</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Типы связей: Братья</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: ??</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: {{max_degree}}</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Центр: {{center_nodes}}</label>
+                                <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: ??</label>
+                            </div>
+                            <div class="border_url_export">
+                                <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
+                                <select class="dropdown-menu-export">
+                                    <option value="1">
+                                        .csv
+                                    </option>
+                                    <option value="2">
+                                        .xlsx
+                                    </option>
+                                </select>
+                                <button class="upload_file">Экспортировать</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="sidenavTwo-tabs" id="sidenavTwo-tab-2" class="tab-switch">
+                        <label for="sidenavTwo-tab-2" class="tab-label">Типы</label>
+                        <div id="sidenavTwo-tab-2-content" class="tab-content">
+                                <div class="type_nodes">
+                                    <h3 class="text_h3">Тип вершин</h3>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <div>
+                                        <input type="text" placeholder="Введите тип вершины" />
+                                        <button class="btn_add">Добавить тип вершины</button>
+                                    </div>
+                                </div>
+                                <div class="type_edges">
+                                    <h3 class="text_h3">Тип дуг/ребер</h3>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <p class="input_nodes">
+                                        tp1: Котик
+                                        <button>X</button>
+                                    </p>
+                                    <div>
+                                        <input type="text" placeholder="Введите тип вершины" />
+                                        <button class="btn_add">Добавить тип вершины</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <script lang="JavaScript">
+                        let sidenavTwoTabs = document.querySelectorAll('.sidenavTwo .tab-switch');
+                        Array.prototype.forEach.call(sidenavTwoTabs, function (input) {
+                            let label = input.nextElementSibling;
+                            input.addEventListener('change', function (e) {
+                                let tabContents = document.querySelectorAll('.sidenavTwo .tab-content');
+                                Array.prototype.forEach.call(tabContents, function (content) {
+                                    content.style.display = 'none';
+                                });
+                                document.querySelector('.sidenavTwo #' + e.target.id + '-content').style.display = 'block';
+                            });
+                        });
+                    </script>
+
                 </div>
               </div>
 
@@ -275,6 +339,16 @@
                                 }
                             }
                         </script>
+
+                        <!-- switcher -->
+                        <div class="switcher_div">
+                            <span style="font-size: 16px;">User</span>
+                            <label class="switch">
+                                <input type="checkbox">
+                            <span class="slider round"></span>
+                            </label>
+                            <span style="font-size: 16px;">Math</span>
+                        </div>
 
                     </div>
                 </div>
@@ -452,7 +526,7 @@
                         userInfo.textContent = 'Никнейм: ' + jsonData.username;
                         degreeInfo.textContent = "Степень: " + jsonData.degree;
                         updateDisplay();
-                        
+
                     }else{
                         condition = false; // Обновить condition
                         updateDisplay();
