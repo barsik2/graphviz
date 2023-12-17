@@ -75,9 +75,8 @@ h1 {
 }
 
 .input_nodes {
+    width: 110px;
     display: flex;
-    /* grid-template-columns: 2fr; */
-    /* display: flex; */
     flex-wrap: wrap;
     cursor: pointer;
     border-radius: 25px;
@@ -87,6 +86,11 @@ h1 {
 
 .type_edges {
     padding: 20px 90px 20px 50px;
+}
+
+.type_edge_div {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .text_h3 {
