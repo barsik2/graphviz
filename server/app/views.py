@@ -173,15 +173,23 @@ def generate_graph(name_project):
         G = gnp_random_connected_graph(count, p)
 
         for i, node in enumerate(G.nodes()):
-            G.nodes[node]['label'] = data['first_name'][i]
+            G.nodes[node]['label'] = f"gv{i}/tp{0}"
             G.nodes[node]['title'] = f"ФИО: {data['last_name'][i]} {data['first_name'][i]} {data['patronymic'][i]} / ID: {i}"
             G.nodes[node]['fio'] = f"{data['last_name'][i]} {data['first_name'][i]} {data['patronymic'][i]}"
             G.nodes[node]['phone_number'] = data['phone_number'][i]
             G.nodes[node]['username'] = data['username'][i]
             G.nodes[node]['color'] = get_blue_color_hex(G.degree[node], max(dict(G.degree())))
+
         
         g = GVNetwork(directed=True)
         g.from_nx(G)
+
+        print(g.edges)
+        
+        count = 0
+        for edge in g.edges:
+            edge['label'] = f"ge{count}/tp{0}"
+            count+=1
 
         nx.write_graphml(G, f'server/app/static/nx/{name_project}/{name_project}.graphml')
         g.loc_generate_html(name_project, name=f'server/app/static/nx/{name_project}/{name_project}.html')

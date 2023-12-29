@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+            function sendMessageToParent(selectedNodeId) {
+            window.parent.postMessage(selectedNodeId, '*');
+        }
+
+
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#7d7de4", "fio": "\u041a\u043e\u0444\u0430\u043d\u043e\u0432 \u041c\u0438\u0440\u043e\u0441\u043b\u0430\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447", "id": 0, "label": "gv0/tp0", "phone_number": "+7-(968)-386-61-48", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041a\u043e\u0444\u0430\u043d\u043e\u0432 \u041c\u0438\u0440\u043e\u0441\u043b\u0430\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447 / ID: 0", "username": "writes_2070"}, {"color": "#7d7dc9", "fio": "\u0415\u043b\u0435\u0430\u0437\u0430\u0440\u043e\u0432\u0430 \u041d\u0430\u0434\u0435\u0436\u0434\u0430 \u0415\u0444\u0438\u043c\u044c\u0435\u0432\u043d\u0430", "id": 2, "label": "gv2/tp0", "phone_number": "+7-(932)-469-40-65", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0415\u043b\u0435\u0430\u0437\u0430\u0440\u043e\u0432\u0430 \u041d\u0430\u0434\u0435\u0436\u0434\u0430 \u0415\u0444\u0438\u043c\u044c\u0435\u0432\u043d\u0430 / ID: 2", "username": "gerald_2060"}, {"color": "#7d7de4", "fio": "\u041c\u0430\u0440\u043a\u043e\u0432\u0430 \u0424\u0440\u0438\u0434\u0430 \u0418\u0441\u0438\u0434\u043e\u0440\u043e\u0432\u043d\u0430", "id": 1, "label": "gv1/tp0", "phone_number": "+7-(968)-126-30-91", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041c\u0430\u0440\u043a\u043e\u0432\u0430 \u0424\u0440\u0438\u0434\u0430 \u0418\u0441\u0438\u0434\u043e\u0440\u043e\u0432\u043d\u0430 / ID: 1", "username": "latino_2073"}, {"color": "#7d7dae", "fio": "\u0415\u043d\u0435\u043d\u043a\u043e \u0410\u0440\u0442\u0443\u0440 \u0413\u043b\u0435\u0431\u043e\u0432\u0438\u0447", "id": 11, "label": "gv11/tp0", "phone_number": "+7-(966)-797-47-80", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0415\u043d\u0435\u043d\u043a\u043e \u0410\u0440\u0442\u0443\u0440 \u0413\u043b\u0435\u0431\u043e\u0432\u0438\u0447 / ID: 11", "username": "deals_1902"}, {"color": "#7d7dc9", "fio": "\u0410\u0441\u0442\u0430\u0448\u0438\u043d \u0421\u0435\u0440\u0433\u0435\u0439 \u0410\u0440\u0441\u0435\u043d\u043e\u0432\u0438\u0447", "id": 8, "label": "gv8/tp0", "phone_number": "+7-(964)-252-15-93", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0410\u0441\u0442\u0430\u0448\u0438\u043d \u0421\u0435\u0440\u0433\u0435\u0439 \u0410\u0440\u0441\u0435\u043d\u043e\u0432\u0438\u0447 / ID: 8", "username": "qualities_1984"}, {"color": "#7d7de4", "fio": "\u0412\u0430\u0441\u0438\u043b\u0435\u0432\u0430 \u0415\u0432\u0434\u043e\u043a\u0438\u044f \u0425\u0430\u0440\u043b\u0430\u043c\u043f\u043e\u0432\u043d\u0430", "id": 3, "label": "gv3/tp0", "phone_number": "+7-(968)-295-99-49", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0412\u0430\u0441\u0438\u043b\u0435\u0432\u0430 \u0415\u0432\u0434\u043e\u043a\u0438\u044f \u0425\u0430\u0440\u043b\u0430\u043c\u043f\u043e\u0432\u043d\u0430 / ID: 3", "username": "infected_1896"}, {"color": "#7d7d93", "fio": "\u0414\u043e\u0432\u043b\u0430\u0442\u043e\u0432\u0430 \u0410\u043c\u0430\u043b\u044c \u0422\u0440\u043e\u0444\u0438\u043c\u043e\u0432\u043d\u0430", "id": 17, "label": "gv17/tp0", "phone_number": "+7-(931)-769-05-97", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0414\u043e\u0432\u043b\u0430\u0442\u043e\u0432\u0430 \u0410\u043c\u0430\u043b\u044c \u0422\u0440\u043e\u0444\u0438\u043c\u043e\u0432\u043d\u0430 / ID: 17", "username": "sing_2022"}, {"color": "#7d7de4", "fio": "\u0422\u044b\u043d\u044f\u043d\u043e\u0432 \u041f\u0430\u0445\u043e\u043c\u0438\u0439 \u0410\u0444\u0430\u043d\u0430\u0441\u044c\u0435\u0432\u0438\u0447", "id": 4, "label": "gv4/tp0", "phone_number": "+7-(934)-071-07-24", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0422\u044b\u043d\u044f\u043d\u043e\u0432 \u041f\u0430\u0445\u043e\u043c\u0438\u0439 \u0410\u0444\u0430\u043d\u0430\u0441\u044c\u0435\u0432\u0438\u0447 / ID: 4", "username": "victim_2004"}, {"color": "#7d7dc9", "fio": "\u041f\u043e\u0440\u0444\u0438\u0440\u044c\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u0440\u0441\u0435\u043d\u043e\u0432\u0438\u0447", "id": 12, "label": "gv12/tp0", "phone_number": "+7-(925)-210-12-92", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041f\u043e\u0440\u0444\u0438\u0440\u044c\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u0440\u0441\u0435\u043d\u043e\u0432\u0438\u0447 / ID: 12", "username": "moreover_2004"}, {"color": "#7d7de4", "fio": "\u041b\u0430\u043d\u044c\u043a\u043e\u0432 \u0421\u0438\u043b\u044c\u0432\u0435\u0441\u0442\u0440 \u0411\u043e\u0440\u0438\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447", "id": 5, "label": "gv5/tp0", "phone_number": "+7-(999)-670-94-20", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041b\u0430\u043d\u044c\u043a\u043e\u0432 \u0421\u0438\u043b\u044c\u0432\u0435\u0441\u0442\u0440 \u0411\u043e\u0440\u0438\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447 / ID: 5", "username": "urls_1894"}, {"color": "#7d7dc9", "fio": "\u0418\u0440\u0438\u043d\u0435\u0435\u0432\u0430 \u041f\u0435\u0439\u0442\u043e\u043d \u0415\u043b\u0438\u0437\u0430\u0440\u043e\u0432\u043d\u0430", "id": 14, "label": "gv14/tp0", "phone_number": "+7-(968)-989-83-41", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0418\u0440\u0438\u043d\u0435\u0435\u0432\u0430 \u041f\u0435\u0439\u0442\u043e\u043d \u0415\u043b\u0438\u0437\u0430\u0440\u043e\u0432\u043d\u0430 / ID: 14", "username": "relatively_1890"}, {"color": "#7d7de4", "fio": "\u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432 \u041b\u0435\u043e\u043d\u0438\u0434 \u042d\u0434\u0433\u0430\u0440\u043e\u0432\u0438\u0447", "id": 6, "label": "gv6/tp0", "phone_number": "+7-(919)-653-97-53", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432 \u041b\u0435\u043e\u043d\u0438\u0434 \u042d\u0434\u0433\u0430\u0440\u043e\u0432\u0438\u0447 / ID: 6", "username": "replacing_2032"}, {"color": "#7d7de4", "fio": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0438\u0439 \u041c\u0438\u0445\u0430\u0438\u043b \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447", "id": 7, "label": "gv7/tp0", "phone_number": "+7-(968)-811-38-16", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0438\u0439 \u041c\u0438\u0445\u0430\u0438\u043b \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447 / ID: 7", "username": "dennis_1827"}, {"color": "#7d7d93", "fio": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432 \u041a\u0438\u043c \u0424\u0451\u0434\u043e\u0440\u043e\u0432\u0438\u0447", "id": 15, "label": "gv15/tp0", "phone_number": "+7-(999)-757-40-07", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432 \u041a\u0438\u043c \u0424\u0451\u0434\u043e\u0440\u043e\u0432\u0438\u0447 / ID: 15", "username": "amenities_1914"}, {"color": "#7d7de4", "fio": "\u041e\u043a\u0443\u043d\u0435\u0432\u0430 \u0417\u0430\u0440\u0438\u043d\u0430 \u0414\u0435\u043d\u0438\u0441\u043e\u0432\u043d\u0430", "id": 9, "label": "gv9/tp0", "phone_number": "+7-(909)-073-65-85", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041e\u043a\u0443\u043d\u0435\u0432\u0430 \u0417\u0430\u0440\u0438\u043d\u0430 \u0414\u0435\u043d\u0438\u0441\u043e\u0432\u043d\u0430 / ID: 9", "username": "drop_1853"}, {"color": "#7d7de4", "fio": "\u0412\u0438\u043d\u0442\u0438\u043b\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0415\u0432\u0441\u0442\u0438\u0433\u043d\u0435\u0435\u0432\u043d\u0430", "id": 10, "label": "gv10/tp0", "phone_number": "+7-(968)-609-96-53", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0412\u0438\u043d\u0442\u0438\u043b\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0415\u0432\u0441\u0442\u0438\u0433\u043d\u0435\u0435\u0432\u043d\u0430 / ID: 10", "username": "sir_1866"}, {"color": "#7d7d93", "fio": "\u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0436\u0441\u043a\u0430\u044f \u0410\u0433\u0443\u043d\u0434\u0430 \u0410\u0432\u0435\u0440\u044c\u044f\u043d\u043e\u0432\u043d\u0430", "id": 16, "label": "gv16/tp0", "phone_number": "+7-(921)-132-24-20", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0436\u0441\u043a\u0430\u044f \u0410\u0433\u0443\u043d\u0434\u0430 \u0410\u0432\u0435\u0440\u044c\u044f\u043d\u043e\u0432\u043d\u0430 / ID: 16", "username": "editions_2067"}, {"color": "#7d7de4", "fio": "\u041f\u0430\u043d\u0444\u0438\u043b\u044c\u0435\u0432 \u0424\u0435\u043b\u0438\u043a\u0441 \u0424\u0435\u043e\u043a\u0442\u0438\u0441\u0442\u043e\u0432\u0438\u0447", "id": 13, "label": "gv13/tp0", "phone_number": "+7-(909)-295-12-44", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u041f\u0430\u043d\u0444\u0438\u043b\u044c\u0435\u0432 \u0424\u0435\u043b\u0438\u043a\u0441 \u0424\u0435\u043e\u043a\u0442\u0438\u0441\u0442\u043e\u0432\u0438\u0447 / ID: 13", "username": "enhanced_1917"}, {"color": "#7d7dae", "fio": "\u0411\u0435\u0440\u0435\u0437\u0438\u043d\u0430 \u041c\u0430\u0440\u0438\u044f \u0423\u0441\u0442\u0438\u043d\u043e\u0432\u043d\u0430", "id": 18, "label": "gv18/tp0", "phone_number": "+7-(963)-055-11-85", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0411\u0435\u0440\u0435\u0437\u0438\u043d\u0430 \u041c\u0430\u0440\u0438\u044f \u0423\u0441\u0442\u0438\u043d\u043e\u0432\u043d\u0430 / ID: 18", "username": "village_2070"}, {"color": "#7d7dc9", "fio": "\u0414\u043c\u0438\u0442\u0440\u0443\u043a \u0410\u0432\u043a\u0441\u0435\u043d\u0442\u0438\u0439 \u0414\u0430\u043d\u0438\u043b\u043e\u0432\u0438\u0447", "id": 19, "label": "gv19/tp0", "phone_number": "+7-(938)-992-81-27", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: \u0414\u043c\u0438\u0442\u0440\u0443\u043a \u0410\u0432\u043a\u0441\u0435\u043d\u0442\u0438\u0439 \u0414\u0430\u043d\u0438\u043b\u043e\u0432\u0438\u0447 / ID: 19", "username": "voip_1922"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": 0, "id": 0, "label": "ge0/tp0", "to": 2, "type": 0, "width": 0.1}, {"arrows": "to", "from": 1, "id": 2, "label": "ge1/tp0", "to": 11, "type": 0, "width": 0.5}, {"arrows": "to", "from": 2, "id": 1, "label": "ge2/tp0", "to": 0, "type": 0, "width": 0.3}, {"arrows": "to", "from": 2, "id": 4, "label": "ge3/tp0", "to": 8, "type": 0, "width": 0.2}, {"arrows": "to", "from": 3, "id": 6, "label": "ge4/tp0", "to": 17, "type": 0, "width": 0.3}, {"arrows": "to", "from": 4, "id": 8, "label": "ge5/tp0", "to": 12, "type": 0, "width": 0.3}, {"arrows": "to", "from": 5, "id": 10, "label": "ge6/tp0", "to": 14, "type": 0, "width": 0.6}, {"arrows": "to", "from": 6, "id": 12, "label": "ge7/tp0", "to": 17, "type": 0, "width": 0.1}, {"arrows": "to", "from": 7, "id": 14, "label": "ge8/tp0", "to": 11, "type": 0, "width": 0.7}, {"arrows": "to", "from": 8, "id": 5, "label": "ge9/tp0", "to": 2, "type": 0, "width": 0.8}, {"arrows": "to", "from": 8, "id": 16, "label": "ge10/tp0", "to": 15, "type": 0, "width": 0.9}, {"arrows": "to", "from": 9, "id": 18, "label": "ge11/tp0", "to": 17, "type": 0, "width": 0.2}, {"arrows": "to", "from": 10, "id": 20, "label": "ge12/tp0", "to": 16, "type": 0, "width": 0.1}, {"arrows": "to", "from": 11, "id": 3, "label": "ge13/tp0", "to": 1, "type": 0, "width": 0.6}, {"arrows": "to", "from": 11, "id": 15, "label": "ge14/tp0", "to": 7, "type": 0, "width": 0.1}, {"arrows": "to", "from": 11, "id": 22, "label": "ge15/tp0", "to": 16, "type": 0, "width": 0.3}, {"arrows": "to", "from": 12, "id": 9, "label": "ge16/tp0", "to": 4, "type": 0, "width": 0.0}, {"arrows": "to", "from": 12, "id": 24, "label": "ge17/tp0", "to": 15, "type": 0, "width": 0.1}, {"arrows": "to", "from": 13, "id": 26, "label": "ge18/tp0", "to": 18, "type": 0, "width": 1.0}, {"arrows": "to", "from": 14, "id": 11, "label": "ge19/tp0", "to": 5, "type": 0, "width": 0.0}, {"arrows": "to", "from": 14, "id": 28, "label": "ge20/tp0", "to": 15, "type": 0, "width": 0.3}, {"arrows": "to", "from": 15, "id": 17, "label": "ge21/tp0", "to": 8, "type": 0, "width": 0.7}, {"arrows": "to", "from": 15, "id": 25, "label": "ge22/tp0", "to": 12, "type": 0, "width": 1.0}, {"arrows": "to", "from": 15, "id": 29, "label": "ge23/tp0", "to": 14, "type": 0, "width": 0.9}, {"arrows": "to", "from": 15, "id": 30, "label": "ge24/tp0", "to": 16, "type": 0, "width": 0.1}, {"arrows": "to", "from": 16, "id": 21, "label": "ge25/tp0", "to": 10, "type": 0, "width": 0.1}, {"arrows": "to", "from": 16, "id": 23, "label": "ge26/tp0", "to": 11, "type": 0, "width": 0.1}, {"arrows": "to", "from": 16, "id": 31, "label": "ge27/tp0", "to": 15, "type": 0, "width": 0.3}, {"arrows": "to", "from": 16, "id": 32, "label": "ge28/tp0", "to": 19, "type": 0, "width": 0.9}, {"arrows": "to", "from": 17, "id": 7, "label": "ge29/tp0", "to": 3, "type": 0, "width": 1.0}, {"arrows": "to", "from": 17, "id": 13, "label": "ge30/tp0", "to": 6, "type": 0, "width": 1.0}, {"arrows": "to", "from": 17, "id": 19, "label": "ge31/tp0", "to": 9, "type": 0, "width": 0.7}, {"arrows": "to", "from": 17, "id": 34, "label": "ge32/tp0", "to": 18, "type": 0, "width": 0.3}, {"arrows": "to", "from": 18, "id": 27, "label": "ge33/tp0", "to": 13, "type": 0, "width": 0.3}, {"arrows": "to", "from": 18, "id": 35, "label": "ge34/tp0", "to": 17, "type": 0, "width": 0.3}, {"arrows": "to", "from": 18, "id": 36, "label": "ge35/tp0", "to": 19, "type": 0, "width": 0.7}, {"arrows": "to", "from": 19, "id": 33, "label": "ge36/tp0", "to": 16, "type": 0, "width": 0.9}, {"arrows": "to", "from": 19, "id": 37, "label": "ge37/tp0", "to": 18, "type": 0, "width": 0.2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+                  network.on('selectNode', function (event) {
+                    var selectedNodeId = event.nodes[0];
+                    sendMessageToParent(selectedNodeId);
+                });
+                network.on("deselectNode", function (params) {
+                    sendMessageToParent(null);
+                });
+
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
