@@ -73,7 +73,7 @@ body{
 /* sidebar */
 
 .sidenav {
-  height: 50%;
+  height: 45%;
   width: 300px;
   position: fixed;
   z-index: 1;
@@ -84,15 +84,17 @@ body{
 }
 
 .sidenavTwo {
-	height: 50%;
+	height: 55%;
   width: 300px;
   position: fixed;
   z-index: 1;
-  top: 50%;
+  top: 55%;
   left: 0;
   background-color: #393939;;
   overflow-x: hidden;
   padding-top: 0px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidenavTwo a {

@@ -5,6 +5,11 @@ body{
     margin: 0 0 0 0;
 }
 
+button {
+    border: none;
+    background: none;
+}
+
 @font-face {
     font-family: NicoMoji;
     src: url(../../font/NicoMoji-Regular.ttf);
