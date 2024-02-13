@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1 class="start_text">Создание нового проекта</h1>
-        <form method=post action="/create_new_project">
+        <form method=post action="/create_new_project" class="cont_parent">
             <div class="form">
                 <p class="text_input">Введите название проекта</p>
                 <input name="name_project" placeholder="Имя проекта" class="input" />
@@ -17,32 +17,60 @@
             <div class="cont_type">
                 <div class="type_nodes">
                     <h3 class="text_h3">Тип вершин</h3>
-                    <div class="type_edge_div">
-                        <p class="input_nodes">
-                            tp1: Test
-                            <button>
-                                <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                            </button>
-                        </p>
+                    <div class="cont_type_edge">
+                        <div class="type_edge_div">
+                            <p class="input_nodes">
+                                tp1: Test
+                                <button class="btn_close">
+                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                </button>
+                            </p>
+                        </div>
+                        <div class="type_edge_div">
+                            <p class="input_nodes">
+                                tp1: Test
+                                <button class="btn_close">
+                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                </button>
+                            </p>
+                        </div>
+                        <div class="type_edge_div">
+                            <p class="input_nodes">
+                                tp1: Test
+                                <button class="btn_close">
+                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                </button>
+                            </p>
+                        </div>
+                        <div class="type_edge_div">
+                            <p class="input_nodes">
+                                tp1: Test
+                                <button class="btn_close">
+                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                </button>
+                            </p>
+                        </div>
                     </div>
                     <div>
-                        <input type="text" placeholder="Введите тип вершины" />
+                        <input class="input_type_edge" type="text" placeholder="Введите тип вершины" />
                         <button class="btn_add">Добавить тип вершины</button>
                     </div>
                 </div>
                 <div class="create-line"></div>
                 <div class="type_edges">
                     <h3 class="text_h3">Тип дуг/ребер</h3>
-                    <div class="type_edge_div">
-                        <p class="input_nodes">
-                            tp1: Test
-                            <button>
-                                <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                            </button>
-                        </p>
+                    <div class="cont_type_edge">
+                        <div class="type_edge_div">
+                            <p class="input_nodes">
+                                tp1: Test
+                                <button>
+                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                </button>
+                            </p>
+                        </div>
                     </div>
                     <div>
-                        <input type="text" placeholder="Введите тип вершины" />
+                        <input class="input_type_edge" type="text" placeholder="Введите тип дуг/ребер" />
                         <button class="btn_add">Добавить тип вершины</button>
                     </div>
                 </div>

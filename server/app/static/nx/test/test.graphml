@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d9" for="edge" attr.name="width" attr.type="double" />
+  <key id="d8" for="edge" attr.name="id" attr.type="long" />
+  <key id="d7" for="edge" attr.name="type" attr.type="long" />
+  <key id="d6" for="node" attr.name="size" attr.type="long" />
+  <key id="d5" for="node" attr.name="color" attr.type="string" />
+  <key id="d4" for="node" attr.name="username" attr.type="string" />
+  <key id="d3" for="node" attr.name="phone_number" attr.type="string" />
+  <key id="d2" for="node" attr.name="fio" attr.type="string" />
+  <key id="d1" for="node" attr.name="title" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="0">
+      <data key="d0">gv0/tp0</data>
+      <data key="d1">ФИО: Борцов Трофим Ерофеевич / ID: 0</data>
+      <data key="d2">Борцов Трофим Ерофеевич</data>
+      <data key="d3">+7-(917)-886-41-61</data>
+      <data key="d4">honolulu_2018</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="1">
+      <data key="d0">gv1/tp0</data>
+      <data key="d1">ФИО: Войнович Варсонофий Богданович / ID: 1</data>
+      <data key="d2">Войнович Варсонофий Богданович</data>
+      <data key="d3">+7-(926)-315-42-71</data>
+      <data key="d4">cruises_2033</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="2">
+      <data key="d0">gv2/tp0</data>
+      <data key="d1">ФИО: Мишкина Павлина Алексеевна / ID: 2</data>
+      <data key="d2">Мишкина Павлина Алексеевна</data>
+      <data key="d3">+7-(909)-821-50-51</data>
+      <data key="d4">marijuana_1986</data>
+      <data key="d5">#7d7d55</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="3">
+      <data key="d0">gv3/tp0</data>
+      <data key="d1">ФИО: Юдин Юстин Даниилович / ID: 3</data>
+      <data key="d2">Юдин Юстин Даниилович</data>
+      <data key="d3">+7-(935)-094-70-16</data>
+      <data key="d4">denver_1912</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="4">
+      <data key="d0">gv4/tp0</data>
+      <data key="d1">ФИО: Трофимова Саломея Дорофеевна / ID: 4</data>
+      <data key="d2">Трофимова Саломея Дорофеевна</data>
+      <data key="d3">+7-(999)-601-27-46</data>
+      <data key="d4">ncaa_2039</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="5">
+      <data key="d0">gv5/tp0</data>
+      <data key="d1">ФИО: Ипполитова Зита Денисовна / ID: 5</data>
+      <data key="d2">Ипполитова Зита Денисовна</data>
+      <data key="d3">+7-(968)-228-79-65</data>
+      <data key="d4">deaths_1930</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="6">
+      <data key="d0">gv6/tp0</data>
+      <data key="d1">ФИО: Орловский Назар Игнатович / ID: 6</data>
+      <data key="d2">Орловский Назар Игнатович</data>
+      <data key="d3">+7-(968)-506-34-66</data>
+      <data key="d4">jan_1911</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="7">
+      <data key="d0">gv7/tp0</data>
+      <data key="d1">ФИО: Верников Пафнутий Авдеевич / ID: 7</data>
+      <data key="d2">Верников Пафнутий Авдеевич</data>
+      <data key="d3">+7-(916)-338-02-30</data>
+      <data key="d4">aging_1839</data>
+      <data key="d5">#7d7d8d</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="8">
+      <data key="d0">gv8/tp0</data>
+      <data key="d1">ФИО: Удачина Зита Харитоновна / ID: 8</data>
+      <data key="d2">Удачина Зита Харитоновна</data>
+      <data key="d3">+7-(910)-718-31-42</data>
+      <data key="d4">medal_2083</data>
+      <data key="d5">#7d7d1c</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="9">
+      <data key="d0">gv9/tp0</data>
+      <data key="d1">ФИО: Лощиц Митрофан Терентьевич / ID: 9</data>
+      <data key="d2">Лощиц Митрофан Терентьевич</data>
+      <data key="d3">+7-(913)-028-42-48</data>
+      <data key="d4">pre_1826</data>
+      <data key="d5">#7d7d55</data>
+      <data key="d6">10</data>
+    </node>
+    <edge source="0" target="2" id="0">
+      <data key="d7">0</data>
+      <data key="d8">0</data>
+      <data key="d9">0.9</data>
+    </edge>
+    <edge source="1" target="2" id="0">
+      <data key="d7">0</data>
+      <data key="d8">2</data>
+      <data key="d9">0.4</data>
+    </edge>
+    <edge source="2" target="0" id="0">
+      <data key="d7">0</data>
+      <data key="d8">1</data>
+      <data key="d9">0.4</data>
+    </edge>
+    <edge source="2" target="1" id="0">
+      <data key="d7">0</data>
+      <data key="d8">3</data>
+      <data key="d9">0.1</data>
+    </edge>
+    <edge source="2" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">4</data>
+      <data key="d9">0.8</data>
+    </edge>
+    <edge source="3" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">6</data>
+      <data key="d9">0.7</data>
+    </edge>
+    <edge source="4" target="7" id="0">
+      <data key="d7">0</data>
+      <data key="d8">8</data>
+      <data key="d9">0.0</data>
+    </edge>
+    <edge source="5" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">10</data>
+      <data key="d9">0.5</data>
+    </edge>
+    <edge source="6" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">12</data>
+      <data key="d9">0.2</data>
+    </edge>
+    <edge source="7" target="4" id="0">
+      <data key="d7">0</data>
+      <data key="d8">9</data>
+      <data key="d9">0.9</data>
+    </edge>
+    <edge source="7" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">14</data>
+      <data key="d9">0.2</data>
+    </edge>
+    <edge source="8" target="3" id="0">
+      <data key="d7">0</data>
+      <data key="d8">7</data>
+      <data key="d9">1.0</data>
+    </edge>
+    <edge source="8" target="5" id="0">
+      <data key="d7">0</data>
+      <data key="d8">11</data>
+      <data key="d9">0.4</data>
+    </edge>
+    <edge source="8" target="7" id="0">
+      <data key="d7">0</data>
+      <data key="d8">15</data>
+      <data key="d9">0.2</data>
+    </edge>
+    <edge source="8" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">16</data>
+      <data key="d9">0.3</data>
+    </edge>
+    <edge source="9" target="2" id="0">
+      <data key="d7">0</data>
+      <data key="d8">5</data>
+      <data key="d9">0.1</data>
+    </edge>
+    <edge source="9" target="6" id="0">
+      <data key="d7">0</data>
+      <data key="d8">13</data>
+      <data key="d9">0.0</data>
+    </edge>
+    <edge source="9" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">17</data>
+      <data key="d9">0.7</data>
+    </edge>
+  </graph>
+</graphml>

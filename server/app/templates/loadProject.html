@@ -8,24 +8,26 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1 class="start_text">Загрузка проекта</h1>
-        <form method=post action="/upload_project">
-            <div class="form">
-                <p class="text_input">Выберите проект</p>
-                <select name="name_project">
-                    {% for item in projects %}
-                        <option>
-                            {{item}}
-                        </option>
-                    {% endfor %}
-                </select>
+        <div class="container_loadProject">
+            <h1 class="start_text">Загрузка проекта</h1>
+            <form method=post action="/upload_project">
+                <div class="form">
+                    <p class="text_input">Выберите проект</p>
+                    <select name="name_project">
+                        {% for item in projects %}
+                            <option>
+                                {{item}}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="cont">
+                    <button class="btn_create">Загрузить</button>
+                </div>
+            </form>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/GRAPHVIZ.svg') }}" alt="logo">
             </div>
-            <div class="cont">
-                <button class="btn_create">Загрузить</button>
-            </div>
-        </form>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='assets/GRAPHVIZ.svg') }}" alt="logo">
         </div>
     </body>
 </html>

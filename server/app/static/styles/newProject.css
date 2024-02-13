@@ -20,13 +20,19 @@ h1 {
 }
 
 .start_text {
-    margin-top: 100px;
+    margin-top: 40px;
     color: black;
     text-align: center;
 }
 
 .form {
     text-align: center;
+}
+
+.cont_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text_input {
@@ -62,9 +68,9 @@ h1 {
 
 .cont_type {
     display: flex;
-    justify-content: space-around;
-    margin-left: 25%;
-    width: 50%;
+    /* justify-content: space-around; */
+    /* margin-left: 25%; */
+    width: 70%;
     border-radius: 25px;
     border: 1px solid #000;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -80,13 +86,15 @@ h1 {
 }
 
 .input_nodes {
-    width: 110px;
+    /* width: 110px; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     cursor: pointer;
     border-radius: 25px;
     background: #F4F4F4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
 }
 
 .type_edges {
@@ -94,8 +102,15 @@ h1 {
 }
 
 .type_edge_div {
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    display: flex;
+}
+
+.cont_type_edge {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .text_h3 {
@@ -116,7 +131,7 @@ h1 {
 }
 
 .btn_add {
-    padding: 8px 6px 9px 6px;
+    padding: 5px 6px;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
@@ -131,4 +146,9 @@ h1 {
     border-radius: 10px;
     border: 1px solid #000;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.input_type_edge {
+    border-radius: 10px;
+    padding: 5px 10px;
 }
