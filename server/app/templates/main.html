@@ -5,8 +5,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
         {% block content %}
@@ -138,13 +137,13 @@
                         <label for="sidenavTwo-tab-1" class="tab-label">Характеристики</label>
                         <div id="sidenavTwo-tab-1-content" class="tab-content">
                             <div class="border_url">
-                                <label style="display: block;color: white; padding-left: 10px;">Количество вершин: {{len_nodes}}</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Количество ребер: {{len_edges}}</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Типы связей: Братья</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Количество сообществ: ??</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Максимальная степень: {{max_degree}}</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Центр: {{center_nodes}}</label>
-                                <label style="display: block;color: white; padding-left: 10px;">Самая активная вершина: ??</label>
+                                <label style="display: block;color: white;">Количество вершин: {{len_nodes}}</label>
+                                <label style="display: block;color: white;">Количество ребер: {{len_edges}}</label>
+                                <label style="display: block;color: white;">Типы связей: Братья</label>
+                                <label style="display: block;color: white;">Количество сообществ: ??</label>
+                                <label style="display: block;color: white;">Максимальная степень: {{max_degree}}</label>
+                                <label style="display: block;color: white;">Центр: {{center_nodes}}</label>
+                                <label style="display: block;color: white;">Самая активная вершина: ??</label>
                             </div>
                             <div class="border_url_export">
                                 <label style="display: block;color: white; padding-left: 10px;">Параметры экспорта</label>
@@ -261,7 +260,7 @@
                         <option value="4">Смежные группы</option>
                     </select>
 
-                    <div>
+                    <div style="display: flex;">
                         <button id="btn_add_edge" class="btn_add">Добавить отношение</button>
 
                         <div id="modalEdge" class="modal_edge">
@@ -378,6 +377,38 @@
                             <span style="font-size: 16px; padding-left: 5px;">Math</span>
                         </div>
 
+
+                        <!-- {# include 'components/modalTypeNodes' with isOpen = 'false' #} -->
+
+                        <button
+                            onclick="openModal()">
+                            Запустить
+                        </button>
+
+                        <script lang="JavaScript">
+                            let isOpen = false
+                            function openModal() {
+                                isOpen = true;
+                            }
+                        </script>
+
+                        {% if isOpen == true %}`
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Заголовок модального окна</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                    <button type="button" class="btn btn-primary">Понял</button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
 

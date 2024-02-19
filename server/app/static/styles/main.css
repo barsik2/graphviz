@@ -1,6 +1,6 @@
 body{
-  font-family: 'Montserrat';
-  background-color: #CFCFCF;
+  font-family: 'Montserrat' !important;
+  background-color: #CFCFCF !important;
   padding: 0px 0px 0px 0px;
   margin: 0 0 0 0;
 }
@@ -106,7 +106,7 @@ align-items: center;
 .sidenavTwo a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 25px !important;
   color: #818181;
   display: block;
 }
@@ -118,7 +118,7 @@ align-items: center;
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 25px !important;
   color: #818181;
   display: block;
 }
@@ -148,8 +148,8 @@ border-radius: 30px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {padding-top: 15px !important;}
+  .sidenav a {font-size: 18px !important;}
 }
 
 .panel_graph {
@@ -205,7 +205,7 @@ display: block;
 margin-top: 5px;
 margin-left: auto;
 margin-right: auto;
-padding: 9px 40px 9px 41px;
+padding: 5px 40px 5px 40px;
 border-radius: 25px;
 background: #CFCFCF;
 cursor: pointer;
@@ -316,14 +316,15 @@ color: #f1f1f1;
 }
 
 .border_url {
-  margin: 10px 5px 10px 5px;
-  padding: 20px 0px 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 10px 0px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 270px;
   border-radius: 25px;
   border: 1px solid #FFF;
+  line-height: 21px;
 }
 .border_url_export {
   margin: 10px 5px 10px 5px;
@@ -410,10 +411,12 @@ justify-content: space-between;
 /* modal */
 #myBtn {
 cursor: pointer;
+margin-right: 10px;
 }
 
 #btn_add_edge {
 cursor: pointer;
+margin-right: 10px;
 }
 
 .modal {
@@ -460,7 +463,7 @@ to {top:0; opacity:1}
 .close {
 color: white;
 float: right;
-font-size: 28px;
+font-size: 28px !important;
 font-weight: bold;
 }
 
@@ -526,7 +529,7 @@ to {top:0; opacity:1}
 .close-edge {
 color: white;
 float: right;
-font-size: 28px;
+font-size: 28px !important;
 font-weight: bold;
 }
 
@@ -576,7 +579,7 @@ padding: 14px 20px 14px 20px;
 .text_info {
 color: #000;
 font-family: Montserrat;
-font-size: 16px;
+font-size: 16px !important;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -634,7 +637,7 @@ to {top:0; opacity:1}
 .close-generate {
 color: white;
 float: right;
-font-size: 28px;
+font-size: 28px !important;
 font-weight: bold;
 }
 
@@ -699,7 +702,7 @@ to {top:0; opacity:1}
 .close-delete {
 color: white;
 float: right;
-font-size: 28px;
+font-size: 28px !important;
 font-weight: bold;
 }
 
@@ -770,7 +773,7 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 .text_h3 {
 color: #fff;
-font-size: 20px;
+font-size: 20px !important;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
