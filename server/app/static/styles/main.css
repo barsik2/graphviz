@@ -23,6 +23,7 @@ button {
   padding-top: 90px;
   padding-left: 50px;
   padding-right: 50px;
+  max-width: 1920px !important;
 }
 
 /* header */
@@ -79,6 +80,7 @@ button {
 /* sidebar */
 
 .sidenav {
+display: none;
 height: 45%;
 width: 300px;
 position: fixed;
@@ -90,6 +92,7 @@ overflow-x: hidden;
 }
 
 .sidenavTwo {
+display: none;
 height: 55%;
 width: 300px;
 position: fixed;
@@ -139,10 +142,11 @@ border-bottom: 1px solid #FFF;
 
 .dropdown_metrick {
 border-radius: 30px;
+margin-right: 10px;
 }
 
 .main {
-  margin-left: 350px; /* Same as the width of the sidenav */
+  /* margin-left: 350px; */ /* Same as the width of the sidenav */
   /*font-size: 28px;*/ /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
@@ -157,6 +161,7 @@ border-radius: 30px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .generate {
@@ -881,7 +886,7 @@ border-radius: 50%;
 .switcher_div {
 display: flex;
 justify-content: center;
-width: 150px;
+width: 157px;
 align-items: center;
 border-radius: 25px;
 background: #DCDCDC;
@@ -929,6 +934,31 @@ grid-template-columns: auto auto;
 .menu_graph {
   display: flex;
   position: absolute;
-  right: 160px;
-  top: 230px;
+  right: 65px;
+  top: 200px;
 }
+
+.btn_full_screen::after {
+  content: attr(data-title);
+  background: rgba(255,255,230,0.9);
+}
+
+[data-tooltip] {
+  position: relative;
+ }
+ [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 210px;
+  right: -5px; top: 10px;
+  background: none;
+  color: #000;
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s;
+  z-index: 1;
+ }
+ [data-tooltip]:hover::after {
+  opacity: 1;
+  top: 2em;
+ }

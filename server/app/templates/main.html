@@ -32,7 +32,7 @@
             </div>
             {% endblock %}
         <div class="container">
-            <div class="sidenav">
+            <div class="sidenav" id="sidenav">
                 <div class="tabs">
                     <div class="tab">
                         <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
@@ -171,324 +171,371 @@
               </div>
 
               <div class="main">
-                <p>{{name_project}}</p>
                 <!-- <input class="input_name_graph" placeholder="Имя графа" type="text" /> -->
 
                 <div class="panel_graph">
-                    <select class="dropdown_metrick">
-                        <option value="">Поиск метрик</option>
-                        <option value="2">Центральность по степени</option>
-                        <option value="3">Центральность по близости</option>
-                        <option value="4">Смежные группы</option>
-                    </select>
+                    <p>{{name_project}}</p>
 
-                    <div style="display: flex;">
-                        <button id="btnTypeNodes" class="btn_add" onclick="openModalTN()">Тип вершин</button>
-                        <div id="modalTypeNodes" class="modalTypeNodes">
-                        <div class="modal-content-type-n">
-                            <div class="cont_type">
-                                <div class="type_nodes">
-                                    <span class="close-type-nodes" onclick="closeModalTN()">&times;</span>
-                                    <h3 class="text_h3">Тип вершин</h3>
-                                    <div class="cont_type_edge">
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <input class="input_type_edge" type="text" placeholder="Введите тип вершины" />
-                                        <button class="btn_add">Добавить тип вершины</button>
-                                        <button class="btn_add">Готово</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <script>
-                            const modalTypeNodes = document.getElementById('modalTypeNodes');
-                            function openModalTN() {
-                                modalTypeNodes.style.display = 'flex';
-                            }
-                            function closeModalTN() {
-                                modalTypeNodes.style.display = 'none';
+                    <div>
+                        <button onclick="openMenu()">
+                            <img src="{{ url_for('static', filename='assets/icon-menu.png') }}" alt="menu">
+                        </button>
+
+                        <button class="btn_full_screen" data-tooltip="Открыть в полноэкранном режиме" onclick="openFullscreen()">
+                            <img src="{{ url_for('static', filename='assets/icon-fullScrin.png') }}" alt="fullScreen">
+                        </button>
+
+                        <script lang="JavaScript">
+                            function openMenu() {
+                                const sidenav = document.querySelector(".sidenav");
+                                const sidenavTwo = document.querySelector(".sidenavTwo");
+                                if (sidenav.style.display === 'block') {
+                                    sidenav.style.display = 'none';
+                                    sidenavTwo.style.display = 'none';
+                                } else {
+                                    sidenav.style.display = 'block';
+                                    sidenavTwo.style.display = 'block';
+                                }
                             }
                         </script>
 
-                        <button id="btnTypeArc" class="btn_add" onclick="openModalTA()">Тип дуг</button>
-                        <div id="modalTypeArc" class="modalTypeNodes">
-                        <div class="modal-content-type-n">
-                            <div class="cont_type">
-                                <div class="type_nodes">
-                                    <span class="close-type-nodes" onclick="closeModalTA()">&times;</span>
-                                    <h3 class="text_h3">Тип дуг</h3>
-                                    <div class="cont_type_edge">
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <input class="input_type_edge" type="text" placeholder="Введите тип дуги" />
-                                        <button class="btn_add">Добавить тип дуги</button>
-                                        <button class="btn_add">Готово</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
                         <script>
-                            const modalTypeArc = document.getElementById('modalTypeArc');
-                            function openModalTA() {
-                                modalTypeArc.style.display = 'flex';
-                            }
-                            function closeModalTA() {
-                                modalTypeArc.style.display = 'none';
-                            }
-                        </script>
+                            /* Получите элемент, который вы хотите отобразить в полноэкранном режиме (видео в этом примере): */
+                            var elem = document.querySelector(".main");
 
-
-                        <button id="btnTypeEdge" class="btn_add" onclick="openModalTA()">Тип ребер</button>
-                        <div id="modalTypeEdge" class="modalTypeNodes">
-                        <div class="modal-content-type-n">
-                            <div class="cont_type">
-                                <div class="type_nodes">
-                                    <span class="close-type-nodes" onclick="closeModalTA()">&times;</span>
-                                    <h3 class="text_h3">Тип ребер</h3>
-                                    <div class="cont_type_edge">
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <div class="type_edge_div">
-                                            <p class="input_nodes">
-                                                tp1: Test
-                                                <button class="btn_close">
-                                                    <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
-                                                </button>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <input class="input_type_edge" type="text" placeholder="Введите тип ребра" />
-                                        <button class="btn_add">Добавить тип ребра</button>
-                                        <button class="btn_add">Готово</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <script>
-                            const modalTypeEdge = document.getElementById('modalTypeEdge');
-                            function openModalTA() {
-                                modalTypeEdge.style.display = 'flex';
+                            /* При выполнении функции open Full screen() откройте видео в полноэкранном режиме.
+                            Примечание что мы должны включать префиксы для разных браузеров, так как они еще не поддерживают метод requestFullscreen */
+                            function openFullscreen() {
+                            if (elem.requestFullscreen) {
+                                elem.requestFullscreen();
+                            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                                elem.mozRequestFullScreen();
+                            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                                elem.webkitRequestFullscreen();
+                            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                                elem.msRequestFullscreen();
                             }
-                            function closeModalTA() {
-                                modalTypeEdge.style.display = 'none';
                             }
-                        </script>
-
+                            </script>
                     </div>
+
                         <!-- {# include 'components/modalTypeNodes' with isOpen = 'false' #} -->
-                    </div>
+                </div>
+
+
 
                     <div class="menu_graph">
+                        <select class="dropdown_metrick">
+                            <option value="">Поиск метрик</option>
+                            <option value="2">Центральность по степени</option>
+                            <option value="3">Центральность по близости</option>
+                            <option value="4">Смежные группы</option>
+                        </select>
+                        <div style="display: flex;">
+                            <button id="btnTypeNodes" class="btn_add" onclick="openModalTN()">Тип вершин</button>
+                            <div id="modalTypeNodes" class="modalTypeNodes">
+                            <div class="modal-content-type-n">
+                                <div class="cont_type">
+                                    <div class="type_nodes">
+                                        <span class="close-type-nodes" onclick="closeModalTN()">&times;</span>
+                                        <h3 class="text_h3">Тип вершин</h3>
+                                        <div class="cont_type_edge">
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input class="input_type_edge" type="text" placeholder="Введите тип вершины" />
+                                            <button class="btn_add">Добавить тип вершины</button>
+                                            <button class="btn_add">Готово</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <script>
+                                const modalTypeNodes = document.getElementById('modalTypeNodes');
+                                function openModalTN() {
+                                    modalTypeNodes.style.display = 'flex';
+                                }
+                                function closeModalTN() {
+                                    modalTypeNodes.style.display = 'none';
+                                }
+                            </script>
+
+                            <button id="btnTypeArc" class="btn_add" onclick="openModalTA()">Тип дуг</button>
+                            <div id="modalTypeArc" class="modalTypeNodes">
+                            <div class="modal-content-type-n">
+                                <div class="cont_type">
+                                    <div class="type_nodes">
+                                        <span class="close-type-nodes" onclick="closeModalTA()">&times;</span>
+                                        <h3 class="text_h3">Тип дуг</h3>
+                                        <div class="cont_type_edge">
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input class="input_type_edge" type="text" placeholder="Введите тип дуги" />
+                                            <button class="btn_add">Добавить тип дуги</button>
+                                            <button class="btn_add">Готово</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <script>
+                                const modalTypeArc = document.getElementById('modalTypeArc');
+                                function openModalTA() {
+                                    modalTypeArc.style.display = 'flex';
+                                }
+                                function closeModalTA() {
+                                    modalTypeArc.style.display = 'none';
+                                }
+                            </script>
+
+
+                            <button id="btnTypeEdge" class="btn_add" onclick="openModalTA()">Тип ребер</button>
+                            <div id="modalTypeEdge" class="modalTypeNodes">
+                            <div class="modal-content-type-n">
+                                <div class="cont_type">
+                                    <div class="type_nodes">
+                                        <span class="close-type-nodes" onclick="closeModalTA()">&times;</span>
+                                        <h3 class="text_h3">Тип ребер</h3>
+                                        <div class="cont_type_edge">
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <div class="type_edge_div">
+                                                <p class="input_nodes">
+                                                    tp1: Test
+                                                    <button class="btn_close">
+                                                        <img src="{{ url_for('static', filename='assets/btn-cancel.png') }}" alt="close">
+                                                    </button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input class="input_type_edge" type="text" placeholder="Введите тип ребра" />
+                                            <button class="btn_add">Добавить тип ребра</button>
+                                            <button class="btn_add">Готово</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <script>
+                                const modalTypeEdge = document.getElementById('modalTypeEdge');
+                                function openModalTA() {
+                                    modalTypeEdge.style.display = 'flex';
+                                }
+                                function closeModalTA() {
+                                    modalTypeEdge.style.display = 'none';
+                                }
+                            </script>
+
+                        </div>
+
+
                         <button id="btn_add_edge" class="btn_add">Добавить отношение</button>
 
                         <div id="modalEdge" class="modal_edge">
@@ -606,7 +653,7 @@
                         </div>
                 </div>
 
-                <div>
+                <div style="width: 100%">
                     <iframe style="border-radius: 70px;width: 100%" src="{{ url_for('static', filename=nx_file) }}" height="600px", width="100%" frameborder="0"></iframe>
                 </div>
 
