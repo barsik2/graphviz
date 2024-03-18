@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d9" for="edge" attr.name="width" attr.type="double" />
+  <key id="d8" for="edge" attr.name="id" attr.type="long" />
+  <key id="d7" for="edge" attr.name="type" attr.type="long" />
+  <key id="d6" for="node" attr.name="size" attr.type="long" />
+  <key id="d5" for="node" attr.name="color" attr.type="string" />
+  <key id="d4" for="node" attr.name="username" attr.type="string" />
+  <key id="d3" for="node" attr.name="phone_number" attr.type="string" />
+  <key id="d2" for="node" attr.name="fio" attr.type="string" />
+  <key id="d1" for="node" attr.name="title" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="0">
+      <data key="d0">gv0/tp0</data>
+      <data key="d1">ФИО: Писарева Анфиса Трифоновна / ID: 0</data>
+      <data key="d2">Писарева Анфиса Трифоновна</data>
+      <data key="d3">+7-(934)-127-05-06</data>
+      <data key="d4">powerseller_2097</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="1">
+      <data key="d0">gv1/tp0</data>
+      <data key="d1">ФИО: Журавлёв Христофор Артемьевич / ID: 1</data>
+      <data key="d2">Журавлёв Христофор Артемьевич</data>
+      <data key="d3">+7-(934)-415-80-24</data>
+      <data key="d4">jason_1807</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="2">
+      <data key="d0">gv2/tp0</data>
+      <data key="d1">ФИО: Язов Спиридон Августович / ID: 2</data>
+      <data key="d2">Язов Спиридон Августович</data>
+      <data key="d3">+7-(999)-616-07-81</data>
+      <data key="d4">atom_1806</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="3">
+      <data key="d0">gv3/tp0</data>
+      <data key="d1">ФИО: Щукин Лаврентий Чеславович / ID: 3</data>
+      <data key="d2">Щукин Лаврентий Чеславович</data>
+      <data key="d3">+7-(968)-420-46-28</data>
+      <data key="d4">watched_1877</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="4">
+      <data key="d0">gv4/tp0</data>
+      <data key="d1">ФИО: Симонов Константин Августович / ID: 4</data>
+      <data key="d2">Симонов Константин Августович</data>
+      <data key="d3">+7-(928)-143-23-16</data>
+      <data key="d4">warming_2064</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="5">
+      <data key="d0">gv5/tp0</data>
+      <data key="d1">ФИО: Евсеева Аделина Юльевна / ID: 5</data>
+      <data key="d2">Евсеева Аделина Юльевна</data>
+      <data key="d3">+7-(999)-987-32-92</data>
+      <data key="d4">que_1918</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="6">
+      <data key="d0">gv6/tp0</data>
+      <data key="d1">ФИО: Тарасьев Евграф Фадеевич / ID: 6</data>
+      <data key="d2">Тарасьев Евграф Фадеевич</data>
+      <data key="d3">+7-(934)-185-28-71</data>
+      <data key="d4">warranty_2097</data>
+      <data key="d5">#7d7d55</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="7">
+      <data key="d0">gv7/tp0</data>
+      <data key="d1">ФИО: Арбузов Фёдор Васильевич / ID: 7</data>
+      <data key="d2">Арбузов Фёдор Васильевич</data>
+      <data key="d3">+7-(954)-595-60-25</data>
+      <data key="d4">linking_1906</data>
+      <data key="d5">#7d7dc6</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="8">
+      <data key="d0">gv8/tp0</data>
+      <data key="d1">ФИО: Киприанов Артём Бенедиктович / ID: 8</data>
+      <data key="d2">Киприанов Артём Бенедиктович</data>
+      <data key="d3">+7-(920)-320-04-30</data>
+      <data key="d4">controllers_2062</data>
+      <data key="d5">#7d7d55</data>
+      <data key="d6">10</data>
+    </node>
+    <node id="9">
+      <data key="d0">gv9/tp0</data>
+      <data key="d1">ФИО: Горлов Леонид Якубович / ID: 9</data>
+      <data key="d2">Горлов Леонид Якубович</data>
+      <data key="d3">+7-(968)-774-17-12</data>
+      <data key="d4">especially_2054</data>
+      <data key="d5">#7d7d00</data>
+      <data key="d6">10</data>
+    </node>
+    <edge source="0" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">0</data>
+      <data key="d9">0.0</data>
+    </edge>
+    <edge source="1" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">2</data>
+      <data key="d9">1.0</data>
+    </edge>
+    <edge source="2" target="6" id="0">
+      <data key="d7">0</data>
+      <data key="d8">4</data>
+      <data key="d9">0.5</data>
+    </edge>
+    <edge source="3" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">6</data>
+      <data key="d9">0.8</data>
+    </edge>
+    <edge source="4" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">8</data>
+      <data key="d9">0.6</data>
+    </edge>
+    <edge source="5" target="6" id="0">
+      <data key="d7">0</data>
+      <data key="d8">10</data>
+      <data key="d9">0.1</data>
+    </edge>
+    <edge source="6" target="2" id="0">
+      <data key="d7">0</data>
+      <data key="d8">5</data>
+      <data key="d9">0.7</data>
+    </edge>
+    <edge source="6" target="5" id="0">
+      <data key="d7">0</data>
+      <data key="d8">11</data>
+      <data key="d9">0.3</data>
+    </edge>
+    <edge source="6" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">12</data>
+      <data key="d9">0.1</data>
+    </edge>
+    <edge source="7" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">14</data>
+      <data key="d9">0.5</data>
+    </edge>
+    <edge source="8" target="0" id="0">
+      <data key="d7">0</data>
+      <data key="d8">1</data>
+      <data key="d9">0.5</data>
+    </edge>
+    <edge source="8" target="1" id="0">
+      <data key="d7">0</data>
+      <data key="d8">3</data>
+      <data key="d9">0.1</data>
+    </edge>
+    <edge source="8" target="9" id="0">
+      <data key="d7">0</data>
+      <data key="d8">16</data>
+      <data key="d9">0.4</data>
+    </edge>
+    <edge source="9" target="3" id="0">
+      <data key="d7">0</data>
+      <data key="d8">7</data>
+      <data key="d9">0.2</data>
+    </edge>
+    <edge source="9" target="4" id="0">
+      <data key="d7">0</data>
+      <data key="d8">9</data>
+      <data key="d9">0.9</data>
+    </edge>
+    <edge source="9" target="6" id="0">
+      <data key="d7">0</data>
+      <data key="d8">13</data>
+      <data key="d9">0.4</data>
+    </edge>
+    <edge source="9" target="7" id="0">
+      <data key="d7">0</data>
+      <data key="d8">15</data>
+      <data key="d9">0.3</data>
+    </edge>
+    <edge source="9" target="8" id="0">
+      <data key="d7">0</data>
+      <data key="d8">17</data>
+      <data key="d9">0.2</data>
+    </edge>
+  </graph>
+</graphml>

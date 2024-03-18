@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="node" attr.name="color" attr.type="string"/>
+<key id="d5" for="node" attr.name="username" attr.type="string"/>
+<key id="d4" for="node" attr.name="phone_number" attr.type="string"/>
+<key id="d3" for="node" attr.name="size" attr.type="long"/>
+<key id="d2" for="node" attr.name="fio" attr.type="string"/>
+<key id="d1" for="node" attr.name="title" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="1">
+  <data key="d0">1</data>
+  <data key="d1">ФИО:  1 / ID: 0</data>
+  <data key="d2"> 1 </data>
+  <data key="d3">10</data>
+</node>
+<node id="2">
+  <data key="d0">2</data>
+  <data key="d1">ФИО:  2 / ID: 1</data>
+  <data key="d2"> 2 </data>
+  <data key="d4"></data>
+  <data key="d5"></data>
+  <data key="d6">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+</graph></graphml>

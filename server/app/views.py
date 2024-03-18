@@ -117,7 +117,7 @@ def test():
 @app.route('/<name_project>/add_node', methods=['POST', 'GET'])
 def add_node(name_project):
         print(request.form)
-        name = request.form['firstname/']
+        name = request.form['firstname']
         surname = request.form['surname']
         patro = request.form['patro']
         username = request.form['username']
@@ -125,15 +125,16 @@ def add_node(name_project):
 
         g = GVNetwork(directed=True)
         G = nx.read_graphml(f"server/app/static/nx/{name_project}/{name_project}.graphml")
-        print(max(dict(G.degree())))
         node_attributes = {
             "label": name,
             "title": f"ФИО: {surname} {name} {patro}/ ID: {len(G.nodes)}",
             "fio": f"{surname} {name} {patro}",
             "phone_number": phone,
             "username": username,
-            "color": get_blue_color_hex(0, max(dict(G.degree())))
         }
+
+        if G.degree():
+            node_attributes['color'] = get_blue_color_hex(0, max(dict(G.degree())))
         
         G.add_node(f'{len(G.nodes) + 1}', **node_attributes)
         g.from_nx(G)

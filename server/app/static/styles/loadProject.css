@@ -14,8 +14,15 @@ h1 {
     font-family: NicoMoji;
 }
 
+.container_loadProject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
 .start_text {
-    margin-top: 250px;
+    margin-top: 50px;
     color: black;
     text-align: center;
 }
@@ -51,6 +58,6 @@ h1 {
 }
 
 .logo {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
 }

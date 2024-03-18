@@ -1,14 +1,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-
+        
             <script src="lib/bindings/utils.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
+            
+        
 <center>
-<h1></h1>
 </center>
 
 <!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
@@ -27,39 +26,43 @@
 
 
         <center>
-          <h1></h1>
         </center>
         <style type="text/css">
 
              #mynetwork {
                  width: 100%;
-                 height: 100%;
+                 height: 600px;
                  background-color: #ffffff;
                  border: 1px solid lightgray;
                  position: relative;
                  float: left;
              }
 
+             
 
+             
 
-
-
-
+             
         </style>
     </head>
 
 
     <body>
-        <div class="card" style="width: 100%">
-
-
-            <div id="mynetwork" class="card-body"></div>
+        <div class="card" style="width: 100%, height: 85vh">
+            
+            
+            <div id="mynetwork" class="card-body" style="height: 99vh;"></div>
         </div>
 
-
-
+        
+        
 
         <script type="text/javascript">
+            function sendMessageToParent(selectedNodeId) {
+            window.parent.postMessage(selectedNodeId, '*');
+        }
+
+
 
               // initialize global variables.
               var edges;
@@ -77,19 +80,19 @@
                   value : []
               };
 
+              
 
-
-
+              
 
               // This method is responsible for drawing the graph, returns the drawn network
               function drawGraph() {
                   var container = document.getElementById('mynetwork');
 
-
+                  
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": 0, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 7, "label": 7, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 1, "label": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 4, "label": 4, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 2, "label": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 9, "label": 9, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 3, "label": 3, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 5, "label": 5, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 6, "label": 6, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 8, "label": 8, "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"arrows": "to", "from": 0, "id": 0, "to": 7, "type": 0, "width": 0.7}, {"arrows": "to", "from": 1, "id": 2, "to": 4, "type": 0, "width": 0.1}, {"arrows": "to", "from": 2, "id": 4, "to": 9, "type": 0, "width": 0.3}, {"arrows": "to", "from": 3, "id": 6, "to": 9, "type": 0, "width": 0.3}, {"arrows": "to", "from": 4, "id": 3, "to": 1, "type": 0, "width": 0.5}, {"arrows": "to", "from": 4, "id": 8, "to": 7, "type": 0, "width": 0.2}, {"arrows": "to", "from": 5, "id": 10, "to": 6, "type": 0, "width": 0.6}, {"arrows": "to", "from": 6, "id": 11, "to": 5, "type": 0, "width": 0.9}, {"arrows": "to", "from": 6, "id": 12, "to": 8, "type": 0, "width": 0.9}, {"arrows": "to", "from": 7, "id": 1, "to": 0, "type": 0, "width": 0.4}, {"arrows": "to", "from": 7, "id": 9, "to": 4, "type": 0, "width": 0.4}, {"arrows": "to", "from": 7, "id": 14, "to": 9, "type": 0, "width": 0.1}, {"arrows": "to", "from": 8, "id": 13, "to": 6, "type": 0, "width": 0.3}, {"arrows": "to", "from": 8, "id": 16, "to": 9, "type": 0, "width": 0.7}, {"arrows": "to", "from": 9, "id": 5, "to": 2, "type": 0, "width": 0.6}, {"arrows": "to", "from": 9, "id": 7, "to": 3, "type": 0, "width": 0.9}, {"arrows": "to", "from": 9, "id": 15, "to": 7, "type": 0, "width": 0.8}, {"arrows": "to", "from": 9, "id": 17, "to": 8, "type": 0, "width": 0.4}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "fio": "123 123 ", "id": "1", "label": "123", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: 123 123 / ID: 0"}, {"color": "#7d7dff", "fio": "13 241 ", "id": "2", "label": "241", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: 13 241 / ID: 1"}, {"color": "#7d7dff", "fio": " 1241 ", "id": "5", "label": "1241", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  1241 / ID: 4"}, {"color": "#97c2fc", "id": 1, "label": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 2, "label": 2, "shape": "dot", "size": 10}, {"color": "#7d7dff", "fio": "2151 1241 124", "id": "3", "label": "1241", "phone_number": "124", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: 2151 1241 124/ ID: 2", "username": "521"}, {"color": "#7d7dff", "fio": " 42 ", "id": "4", "label": "42", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  42 / ID: 3"}, {"color": "#7d7dff", "fio": "  ", "id": "6", "label": "6", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:   / ID: 5"}, {"color": "#7d7dff", "fio": "214 1342 ", "id": "7", "label": "1342", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e: 214 1342 / ID: 6"}, {"color": "#7d7dff", "fio": " 1 ", "id": "8", "label": "1", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  1 / ID: 7"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "1", "to": "2", "type_data": "\u0422\u0438\u043f \u0441\u0432\u044f\u0437\u0438", "width": 1}, {"arrows": "to", "from": "1", "to": "2", "type_data": "\u0412\u043b\u044e\u0431\u043b\u0435\u043d\u043d\u044b\u0435", "width": 1}, {"arrows": "to", "from": "2", "to": "5", "type_data": "\u0422\u0438\u043f \u0441\u0432\u044f\u0437\u0438", "width": 1}, {"arrows": "to", "from": 1, "to": 2, "type_data": "\u0422\u0438\u043f \u0441\u0432\u044f\u0437\u0438", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
@@ -130,21 +133,29 @@
     }
 };
 
+                  
 
 
-
-
+                  
 
                   network = new vis.Network(container, data, options);
+                  network.on('selectNode', function (event) {
+                    var selectedNodeId = event.nodes[0];
+                    sendMessageToParent(selectedNodeId);
+                });
+                network.on("deselectNode", function (params) {
+                    sendMessageToParent(null);
+                });
 
 
+                  
+
+                  
+
+                  
 
 
-
-
-
-
-
+                  
 
                   return network;
 

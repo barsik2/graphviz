@@ -48,10 +48,10 @@
 
 
     <body>
-        <div class="card" style="width: 100%">
+        <div class="card" style="width: 100%, height: 100vh">
             
             
-            <div id="mynetwork" class="card-body"></div>
+            <div id="mynetwork" class="card-body" style="height: 86vh;"></div>
         </div>
 
         
@@ -91,8 +91,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([]);
-                  edges = new vis.DataSet([]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "fio": " q ", "id": "1", "label": "q", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  q / ID: 0"}, {"color": "#7d7dff", "fio": " wr ", "id": "2", "label": "wr", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  wr / ID: 1"}, {"color": "#7d7dff", "fio": " 123 ", "id": "3", "label": "123", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  123 / ID: 2"}, {"color": "#7d7dff", "fio": " 241 ", "id": "4", "label": "241", "phone_number": "", "shape": "dot", "size": 10, "title": "\u0424\u0418\u041e:  241 / ID: 3", "username": ""}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "1", "to": "2", "type_data": "\u0422\u0438\u043f \u0441\u0432\u044f\u0437\u0438", "width": 1}, {"arrows": "to", "from": "1", "to": "2", "type_data": "\u0422\u0438\u043f \u0441\u0432\u044f\u0437\u0438", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

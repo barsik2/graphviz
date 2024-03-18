@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d8" for="edge" attr.name="width" attr.type="long"/>
+<key id="d7" for="edge" attr.name="type_data" attr.type="string"/>
+<key id="d6" for="node" attr.name="username" attr.type="string"/>
+<key id="d5" for="node" attr.name="phone_number" attr.type="string"/>
+<key id="d4" for="node" attr.name="color" attr.type="string"/>
+<key id="d3" for="node" attr.name="size" attr.type="long"/>
+<key id="d2" for="node" attr.name="fio" attr.type="string"/>
+<key id="d1" for="node" attr.name="title" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="1">
+  <data key="d0">123</data>
+  <data key="d1">ФИО: 123 123 / ID: 0</data>
+  <data key="d2">123 123 </data>
+  <data key="d3">10</data>
+</node>
+<node id="2">
+  <data key="d0">241</data>
+  <data key="d1">ФИО: 13 241 / ID: 1</data>
+  <data key="d2">13 241 </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="3">
+  <data key="d0">1241</data>
+  <data key="d1">ФИО: 2151 1241 124/ ID: 2</data>
+  <data key="d2">2151 1241 124</data>
+  <data key="d5">124</data>
+  <data key="d6">521</data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="4">
+  <data key="d0">42</data>
+  <data key="d1">ФИО:  42 / ID: 3</data>
+  <data key="d2"> 42 </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="5">
+  <data key="d0">1241</data>
+  <data key="d1">ФИО:  1241 / ID: 4</data>
+  <data key="d2"> 1241 </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="6">
+  <data key="d1">ФИО:   / ID: 5</data>
+  <data key="d2">  </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="7">
+  <data key="d0">1342</data>
+  <data key="d1">ФИО: 214 1342 / ID: 6</data>
+  <data key="d2">214 1342 </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="8">
+  <data key="d0">1</data>
+  <data key="d1">ФИО:  1 / ID: 7</data>
+  <data key="d2"> 1 </data>
+  <data key="d4">#7d7dff</data>
+  <data key="d3">10</data>
+</node>
+<node id="1">
+  <data key="d3">10</data>
+</node>
+<node id="2">
+  <data key="d3">10</data>
+</node>
+<edge source="1" target="2" id="0">
+  <data key="d7">Тип связи</data>
+  <data key="d8">1</data>
+</edge>
+<edge source="1" target="2" id="1">
+  <data key="d7">Влюбленные</data>
+  <data key="d8">1</data>
+</edge>
+<edge source="2" target="5" id="0">
+  <data key="d7">Тип связи</data>
+  <data key="d8">1</data>
+</edge>
+<edge source="1" target="2" id="0">
+  <data key="d7">Тип связи</data>
+  <data key="d8">1</data>
+</edge>
+</graph></graphml>
